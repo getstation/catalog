@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"allowJs": false,
+		"experimentalDecorators": true,
+		"preserveConstEnums": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"strictNullChecks": true,
+		"noUnusedLocals": false, // covered by eslint
+		"noUnusedParameters": false, // covered by eslint
+		"noImplicitThis": true,
+		"sourceMap": true,
+		"importHelpers": true,
+		"noEmitHelpers": true,
+		"module": "commonjs",
+		"target": "ES2019",
+		"jsx": "react",
+		"resolveJsonModule": true,
+		"baseUrl": "src",
+		"skipLibCheck": true,
+		"paths": {
+			"@src/*": ["./*"],
+			"@components/*": ["components/*"]
+		},
+		"lib": ["dom"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx", "global.d.ts"],
+	"exclude": [
+		"node_modules"
+	]
+}
