@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classNames from 'classnames';
-import SvgIcon, { Icons } from '@components/Icon/svg';
+import SvgIcon, { Icons } from './svg';
 
 type IconProps = {
 	icon: Icons;

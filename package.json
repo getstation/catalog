@@ -2,17 +2,6 @@
 	"name": "catalog",
 	"version": "1.0.0",
 	"description": "Station's UI catalog",
-	"main": "",
-	"scripts": {
-		"start": "start-storybook -p 6006",
-		"test": "yarn test",
-		"build": "bit build"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/getstation/catalog.git"
-	},
-	"license": "SEE LICENSE IN ./LICENSE",
 	"keywords": [
 		"station",
 		"design-system",
@@ -20,6 +9,15 @@
 		"catalog",
 		"components"
 	],
+	"homepage": "https://github.com/getstation/catalog#readme",
+	"bugs": {
+		"url": "https://github.com/getstation/catalog/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/getstation/catalog.git"
+	},
+	"license": "SEE LICENSE IN ./LICENSE",
 	"author": "Station Team <team@getstation.com> (https://getstation.com)",
 	"contributors": [
 		"Joël Charles <joel@getstation.com>",
@@ -30,28 +28,36 @@
 		"Romain Daniel <romain@getstation.com> (https://www.invaded-map.com)",
 		"Guillaume Arm <guillaume@getstation.com>"
 	],
-	"bugs": {
-		"url": "https://github.com/getstation/catalog/issues"
-	},
-	"homepage": "https://github.com/getstation/catalog#readme",
+	"main": "",
 	"directories": {
 		"lib": "./node_modules/*",
-		"test": "src/**/*.spec.{ts,tsx}",
-		"doc": ".github/*.md"
+		"doc": ".github/*.md",
+		"test": "src/tests/*.spec.{ts,tsx}"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"dependencies": {
+		"babel-loader": "^8.0.6",
+		"classnames": "^2.2.6",
+		"react-jss": "^10.0.4",
+		"typescript": "^3.8.3",
+		"url-loader": "^3.0.0",
+		"webpack": "^4.41.6",
+		"webpack-cli": "^3.3.11"
 	},
 	"peerDependencies": {
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0"
-	},
-	"dependencies": {
-		"typescript": "^3.8.3",
-		"react-jss": "^10.0.4",
-		"classnames": "^2.2.6",
-		"path": "^0.12.7",
-		"webpack": "^4.41.6",
-		"webpack-cli": "^3.3.11",
-		"babel-loader": "^8.0.6",
-		"url-loader": "^3.0.0"
 	},
 	"devDependencies": {
 		"@storybook/addon-a11y": "^5.3.13",
@@ -65,26 +71,26 @@
 		"@storybook/addon-viewport": "^5.3.13",
 		"@storybook/addons": "^5.3.13",
 		"@storybook/react": "^5.3.13",
+		"@svgr/core": "^4.3.3",
+		"@svgr/plugin-prettier": "^5.0.1",
+		"@types/classnames": "^2.2.9",
 		"@types/react": "^16.9.19",
 		"@types/react-dom": "^16.9.5",
-		"@types/classnames": "^2.2.9",
 		"@types/webpack": "^4.41.6",
-		"ts-loader": "^6.2.1",
-		"ts-node": "^8.6.2",
+		"change-case": "^4.1.0",
+		"glob": "^7.1.6",
 		"husky": "^4.2.3",
 		"lint-staged": "^10.0.7",
-		"prettier": "^1.19.1"
+		"path": "^0.12.7",
+		"prettier": "^1.19.1",
+		"ts-loader": "^6.2.1",
+		"ts-node": "^8.6.2"
 	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+	"scripts": {
+		"postinstall": "yarn run icons:gen",
+		"start": "start-storybook -p 6006",
+		"build": "bit build",
+		"test": "yarn test",
+		"icons:gen": "ts-node --transpile-only scripts/generate-icons.ts"
 	}
 }
