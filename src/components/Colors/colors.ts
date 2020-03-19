@@ -1,0 +1,9 @@
+export const lightPrimaryBackgroundColor = "#ffffff";
+export const lightPrimaryFocusBackgroundColor = "#e0f4fb";
+export const lightPrimaryHoverBackgroundColor = "#eff9fd";
+export const lightPrimaryLinkColor = "#3070cd";
+export const lightPrimaryTextColor = "#3c505d";
+export const lightSecondaryBackgroundColor = "#f6f9fb";
+export const lightSecondaryTextColor = "#9da7ae";
+export const lightTertiaryBackgroundColor = "#e7ecf0";
+export const lightTertiaryTextColor = "#76848d";
