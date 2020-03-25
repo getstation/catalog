@@ -1,98 +1,100 @@
 {
-	"name": "catalog",
-	"version": "1.0.0",
-	"description": "Station's UI catalog",
-	"keywords": [
-		"station",
-		"design-system",
-		"UI",
-		"catalog",
-		"components"
-	],
-	"homepage": "https://github.com/getstation/catalog#readme",
-	"bugs": {
-		"url": "https://github.com/getstation/catalog/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/getstation/catalog.git"
-	},
-	"license": "SEE LICENSE IN ./LICENSE",
-	"author": "Station Team <team@getstation.com> (https://getstation.com)",
-	"contributors": [
-		"Joël Charles <joel@getstation.com>",
-		"Hugo Mano <hugo@getstation.com>",
-		"Mikaël Athier <mikael@getstation.com>",
-		"Matthias Dieudonné <matthias@getstation.com>",
-		"Alexandre Lachèze <alexandre@getstation.com>",
-		"Romain Daniel <romain@getstation.com> (https://www.invaded-map.com)",
-		"Guillaume Arm <guillaume@getstation.com>"
-	],
-	"main": "",
-	"directories": {
-		"lib": "./node_modules/*",
-		"doc": ".github/*.md",
-		"test": "src/tests/*.spec.{ts,tsx}"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"dependencies": {
-		"babel-loader": "^8.0.6",
-		"classnames": "^2.2.6",
-		"react-jss": "^10.0.4",
-		"typescript": "^3.8.3",
-		"url-loader": "^3.0.0",
-		"webpack": "^4.41.6",
-		"webpack-cli": "^3.3.11"
-	},
-	"peerDependencies": {
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0"
-	},
-	"devDependencies": {
-		"@storybook/addon-a11y": "^5.3.13",
-		"@storybook/addon-actions": "^5.3.13",
-		"@storybook/addon-backgrounds": "^5.3.13",
-		"@storybook/addon-centered": "^5.3.13",
-		"@storybook/addon-info": "^5.3.13",
-		"@storybook/addon-knobs": "^5.3.13",
-		"@storybook/addon-links": "^5.3.13",
-		"@storybook/addon-storysource": "^5.3.13",
-		"@storybook/addon-viewport": "^5.3.13",
-		"@storybook/addons": "^5.3.13",
-		"@storybook/react": "^5.3.13",
-		"@svgr/core": "^4.3.3",
-		"@svgr/plugin-prettier": "^5.0.1",
-		"@types/classnames": "^2.2.9",
-		"@types/color": "^3.0.1",
-		"@types/react": "^16.9.19",
-		"@types/react-dom": "^16.9.5",
-		"@types/webpack": "^4.41.6",
-		"change-case": "^4.1.0",
-		"color": "^3.1.2",
-		"glob": "^7.1.6",
-		"husky": "^4.2.3",
-		"lint-staged": "^10.0.7",
-		"path": "^0.12.7",
-		"prettier": "^1.19.1",
-		"ts-loader": "^6.2.1",
-		"ts-node": "^8.6.2"
-	},
-	"scripts": {
-		"postinstall": "yarn run icons:gen",
-		"start": "start-storybook -p 6006",
-		"build": "bit build",
-		"test": "yarn test",
-		"icons:gen": "ts-node --transpile-only scripts/generate-icons.ts"
-	}
+  "name": "catalog",
+  "version": "1.0.0",
+  "description": "Station's UI catalog",
+  "keywords": [
+    "station",
+    "design-system",
+    "UI",
+    "catalog",
+    "components"
+  ],
+  "homepage": "https://github.com/getstation/catalog#readme",
+  "bugs": {
+    "url": "https://github.com/getstation/catalog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getstation/catalog.git"
+  },
+  "license": "SEE LICENSE IN ./LICENSE",
+  "author": "Station Team <team@getstation.com> (https://getstation.com)",
+  "contributors": [
+    "Joël Charles <joel@getstation.com>",
+    "Hugo Mano <hugo@getstation.com>",
+    "Mikaël Athier <mikael@getstation.com>",
+    "Matthias Dieudonné <matthias@getstation.com>",
+    "Alexandre Lachèze <alexandre@getstation.com>",
+    "Romain Daniel <romain@getstation.com> (https://www.invaded-map.com)",
+    "Guillaume Arm <guillaume@getstation.com>"
+  ],
+  "main": "",
+  "directories": {
+    "lib": "./node_modules/*",
+    "doc": ".github/*.md",
+    "test": "src/tests/*.spec.{ts,tsx}"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "classnames": "^2.2.6",
+    "react-jss": "^10.0.4",
+    "typescript": "^3.8.3",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.13",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-backgrounds": "^5.3.13",
+    "@storybook/addon-centered": "^5.3.13",
+    "@storybook/addon-info": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addon-storysource": "^5.3.13",
+    "@storybook/addon-viewport": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
+    "@storybook/react": "^5.3.13",
+    "@svgr/core": "^4.3.3",
+    "@svgr/plugin-prettier": "^5.0.1",
+    "@types/classnames": "^2.2.9",
+    "@types/color": "^3.0.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/webpack": "^4.41.6",
+    "change-case": "^4.1.0",
+    "color": "^3.1.2",
+    "glob": "^7.1.6",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2"
+  },
+  "scripts": {
+    "postinstall": "run-s gen:*",
+    "start": "start-storybook -p 6006",
+    "build": "bit build",
+    "test": "yarn test",
+    "gen:icons": "ts-node --transpile-only scripts/generate-icons.ts",
+    "gen:images": "node scripts/genIconsModules.mjs"
+  }
 }
