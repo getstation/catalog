@@ -3,7 +3,7 @@ import React from 'react';
 import color from 'color';
 import { createUseStyles } from 'react-jss';
 import Icon, { Icons } from '../Icon';
-import AppIcon from '../AppIcon';
+import Image from '../Image';
 import Colors from '../Colors';
 import fallback from './favicon-placeholder.svg';
 
@@ -136,11 +136,10 @@ const ListItem = (props: ListItemProps) => {
 	const { url, favIconUrl, isRecent = false, type, title, subtitle, onClick, isSelected } = props;
 	const classes = useStyles(isRecent)();
 	const className = classNames(classes.ListItem, { selected: isSelected });
-	console.log(color(Colors.lightPrimaryTextColor).fade(0.8).string());
 
 	return (
 		<li title={url} className={className} onClick={() => onClick(url)} tabIndex={-1}>
-			<AppIcon icon={favIconUrl || fallback} className={classes.appIcon} />
+			<Image image={favIconUrl || fallback} className={classes.appIcon} />
 			<div className={classes.item}>
 				<span className={classes.title}>{title}</span>
 				<span className={classes.appName}>
