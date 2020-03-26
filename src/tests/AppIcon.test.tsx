@@ -1,1 +1,1 @@
-// TODO: write tests for AppIcon
+// TODO: write tests for Image

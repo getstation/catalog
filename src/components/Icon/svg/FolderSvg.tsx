@@ -1,8 +1,3 @@
-/**
- * DO NOT MODIFY THIS FILE MANUALLY
- * This file is auto-generated via `yarn run generate:icons`
- */
-;
 /* tslint:disable:max-line-length */
 ;
 import * as React from 'react';

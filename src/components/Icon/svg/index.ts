@@ -1,8 +1,4 @@
-/**
- * DO NOT MODIFY THIS FILE MANUALLY
- * This file is auto-generated via `yarn run generate:icons`
- */
-
+import React from 'react';
 import AppsSvg from './AppsSvg';
 import ArrowUpLeftSvg from './ArrowUpLeftSvg';
 import CheckmarkSvg from './CheckmarkSvg';
@@ -17,7 +13,6 @@ import PinnedSvg from './PinnedSvg';
 import ReturnKeySvg from './ReturnKeySvg';
 import SearchSvg from './SearchSvg';
 import StationSvg from './StationSvg';
-import React from 'react';
 
 export enum Icons {
   APPS = 'apps',

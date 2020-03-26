@@ -8,17 +8,10 @@ import { pascalCase, constantCase } from 'change-case';
 const iconsSvgDir = join(__dirname, '../src/assets/icons/');
 const iconsComponentDir = join(__dirname, '../src/components/Icon/svg/');
 
-const AUTO_GENERATED_FILE_HEADER = `/**
- * DO NOT MODIFY THIS FILE MANUALLY
- * This file is auto-generated via \`yarn run generate:icons\`
- */
-`;
-
 // typescript template for svgr
 function template({ template }, _, { componentName, jsx }) {
 	const typeScriptTpl = template.smart({ plugins: ['typescript'] });
 	return typeScriptTpl.ast`
-    ${AUTO_GENERATED_FILE_HEADER}
     ${'/* tslint:disable:max-line-length */\n'}
     import * as React from 'react';
     const ${componentName} = (props: React.SVGProps<SVGSVGElement>) => ${jsx};
@@ -51,8 +44,9 @@ glob(iconsSvgDir + '*.svg', (_, files) => {
 		writeFileSync(join(iconsComponentDir, `${componentName}.tsx`), jsCode);
 	});
 
-	const indexContent = `${AUTO_GENERATED_FILE_HEADER}
-${svgs.map((svg) => `import ${pascalCase(svg)}Svg from './${pascalCase(svg)}Svg';`).join('\n')}
+	const indexContent = `import React from 'react';\n${svgs
+		.map((svg) => `import ${pascalCase(svg)}Svg from './${pascalCase(svg)}Svg';`)
+		.join('\n')}
 
 export enum Icons {
 ${svgs.map((svg) => `  ${constantCase(svg)} = '${svg}',`).join('\n')}
