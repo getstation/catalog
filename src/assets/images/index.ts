@@ -21,7 +21,9 @@ import muteStatus from './mute-status.png';
 import nas from './nas.png';
 import networkDrive from './network-drive.png';
 import pieChart from './pie-chart.png';
+import profileDefault from './profile-default.svg';
 import sourceCode from './source-code.png';
+import stationBlue from './station-blue.svg';
 import survey from './survey.png';
 import trainers from './trainers.png';
 
@@ -48,7 +50,9 @@ MUTE_STATUS = 'muteStatus',
 NAS = 'nas',
 NETWORK_DRIVE = 'networkDrive',
 PIE_CHART = 'pieChart',
+PROFILE_DEFAULT = 'profileDefault',
 SOURCE_CODE = 'sourceCode',
+STATION_BLUE = 'stationBlue',
 SURVEY = 'survey',
 TRAINERS = 'trainers',
 };
@@ -76,7 +80,9 @@ const Image = {
 [Images.NAS]: nas,
 [Images.NETWORK_DRIVE]: networkDrive,
 [Images.PIE_CHART]: pieChart,
+[Images.PROFILE_DEFAULT]: profileDefault,
 [Images.SOURCE_CODE]: sourceCode,
+[Images.STATION_BLUE]: stationBlue,
 [Images.SURVEY]: survey,
 [Images.TRAINERS]: trainers,
 };
