@@ -8,6 +8,7 @@ import FolderSvg from './FolderSvg';
 import HeartSvg from './HeartSvg';
 import HomeSvg from './HomeSvg';
 import LinkSvg from './LinkSvg';
+import LogoutSvg from './LogoutSvg';
 import NightSvg from './NightSvg';
 import PinnedSvg from './PinnedSvg';
 import ReturnKeySvg from './ReturnKeySvg';
@@ -24,6 +25,7 @@ export enum Icons {
   HEART = 'heart',
   HOME = 'home',
   LINK = 'link',
+  LOGOUT = 'logout',
   NIGHT = 'night',
   PINNED = 'pinned',
   RETURN_KEY = 'return-key',
@@ -45,6 +47,7 @@ const SvgIcon: SvgComponents = {
   [Icons.HEART]: HeartSvg,
   [Icons.HOME]: HomeSvg,
   [Icons.LINK]: LinkSvg,
+  [Icons.LOGOUT]: LogoutSvg,
   [Icons.NIGHT]: NightSvg,
   [Icons.PINNED]: PinnedSvg,
   [Icons.RETURN_KEY]: ReturnKeySvg,

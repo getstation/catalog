@@ -8,6 +8,7 @@ type IconProps = {
 	size?: number | string;
 	color?: string;
 	className?: string;
+	onClick?: (icon: Icons) => void;
 };
 
 const useStyles = createUseStyles({
@@ -39,7 +40,7 @@ const Icon = (props: IconProps) => {
 	const Svg = SvgIcon[props.icon];
 
 	return (
-		<div className={classNames(classes.Icon, props.className)}>
+		<div className={classNames(classes.Icon, props.className)} onClick={() => props.onClick && props.onClick(props.icon)}>
 			<Svg className={classes.svg} />
 		</div>
 	);
