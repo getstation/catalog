@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icons/dropdown-full</title>
+    <desc>Created with Sketch.</desc>
+    <g id='icons/dropdown-full' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <path d='M11.8078487,8.81068652 C12.0806618,9.09963143 12.0605565,9.54858401 11.7629422,9.81345018 C11.6281193,9.93343776 11.4518668,10 11.2689704,10 L0.731025317,10 C0.327291183,10 0,9.68224267 0,9.29026914 C0,9.11270039 0.0685593456,8.94158206 0.192146978,8.81068652 L5.46111951,3.23015242 C5.73393261,2.94120751 6.19635537,2.92168783 6.49396966,3.186554 C6.51707343,3.20772165 6.51707343,3.20772165 6.53887619,3.23015242 L11.8078487,8.81068652 Z' id='Triangle' fill='#000000' transform='translate(6.000000, 6.500000) scale(1, -1) translate(-6.000000, -6.500000) '></path>
+    </g>
+</svg>
