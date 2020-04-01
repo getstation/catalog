@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/icon@0.0.4": {
+    "station.catalog/icon@0.0.5": {
         "files": [
             {
                 "relativePath": "src/components/Icon/Icon.tsx",
@@ -93,6 +93,11 @@
                 "relativePath": "src/components/Icon/svg/LinkSvg.tsx",
                 "test": false,
                 "name": "LinkSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/LogoutSvg.tsx",
+                "test": false,
+                "name": "LogoutSvg.tsx"
             },
             {
                 "relativePath": "src/components/Icon/svg/NightSvg.tsx",
