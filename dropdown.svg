@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
-    <title>icons/dropdown</title>
-    <desc>Created with Sketch.</desc>
-    <g id='icons/dropdown' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
-        <path d='M0.436019795,3.4075678 C0.968932879,2.90942938 1.80536322,2.86791784 2.38886252,3.28303319 L2.5413096,3.4075678 L6,6.6405651 L9.4586904,3.4075678 C10.0400501,2.86414407 10.9826205,2.86414407 11.5639802,3.4075678 C12.0968933,3.90570621 12.1413027,4.6875562 11.6972085,5.23297988 L11.5639802,5.3754792 L7.0526449,9.5924322 C6.51973182,10.0905706 5.68330148,10.1320822 5.09980218,9.71696681 L4.9473551,9.5924322 L0.436019795,5.3754792 C-0.145339932,4.83205547 -0.145339932,3.95099152 0.436019795,3.4075678 Z' id='dropdown' fill='#3C505D'></path>
-    </g>
-</svg>
