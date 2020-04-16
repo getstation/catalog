@@ -37,97 +37,137 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/icon@0.0.5": {
+    "station.catalog/icon@0.0.6": {
         "files": [
             {
+                "name": "Icon.tsx",
                 "relativePath": "src/components/Icon/Icon.tsx",
-                "test": false,
-                "name": "Icon.tsx"
+                "test": false
             },
             {
+                "name": "index.ts",
                 "relativePath": "src/components/Icon/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             },
             {
+                "name": "AppsSvg.tsx",
                 "relativePath": "src/components/Icon/svg/AppsSvg.tsx",
-                "test": false,
-                "name": "AppsSvg.tsx"
+                "test": false
             },
             {
+                "name": "ArchiveSvg.tsx",
+                "relativePath": "src/components/Icon/svg/ArchiveSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "ArrowUpLeftSvg.tsx",
                 "relativePath": "src/components/Icon/svg/ArrowUpLeftSvg.tsx",
-                "test": false,
-                "name": "ArrowUpLeftSvg.tsx"
+                "test": false
             },
             {
+                "name": "ArrowsUpDownSvg.tsx",
+                "relativePath": "src/components/Icon/svg/ArrowsUpDownSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "CheckmarkSvg.tsx",
                 "relativePath": "src/components/Icon/svg/CheckmarkSvg.tsx",
-                "test": false,
-                "name": "CheckmarkSvg.tsx"
+                "test": false
             },
             {
+                "name": "CogSvg.tsx",
                 "relativePath": "src/components/Icon/svg/CogSvg.tsx",
-                "test": false,
-                "name": "CogSvg.tsx"
+                "test": false
             },
             {
+                "name": "CrossSvg.tsx",
+                "relativePath": "src/components/Icon/svg/CrossSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "DownloadSvg.tsx",
                 "relativePath": "src/components/Icon/svg/DownloadSvg.tsx",
-                "test": false,
-                "name": "DownloadSvg.tsx"
+                "test": false
             },
             {
+                "name": "DropdownSvg.tsx",
+                "relativePath": "src/components/Icon/svg/DropdownSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "EditorSvg.tsx",
+                "relativePath": "src/components/Icon/svg/EditorSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "FolderSvg.tsx",
                 "relativePath": "src/components/Icon/svg/FolderSvg.tsx",
-                "test": false,
-                "name": "FolderSvg.tsx"
+                "test": false
             },
             {
+                "name": "HeartSvg.tsx",
                 "relativePath": "src/components/Icon/svg/HeartSvg.tsx",
-                "test": false,
-                "name": "HeartSvg.tsx"
+                "test": false
             },
             {
+                "name": "HomeSvg.tsx",
                 "relativePath": "src/components/Icon/svg/HomeSvg.tsx",
-                "test": false,
-                "name": "HomeSvg.tsx"
+                "test": false
             },
             {
+                "name": "LinkSvg.tsx",
                 "relativePath": "src/components/Icon/svg/LinkSvg.tsx",
-                "test": false,
-                "name": "LinkSvg.tsx"
+                "test": false
             },
             {
+                "name": "LogoutSvg.tsx",
                 "relativePath": "src/components/Icon/svg/LogoutSvg.tsx",
-                "test": false,
-                "name": "LogoutSvg.tsx"
+                "test": false
             },
             {
+                "name": "NightSvg.tsx",
                 "relativePath": "src/components/Icon/svg/NightSvg.tsx",
-                "test": false,
-                "name": "NightSvg.tsx"
+                "test": false
             },
             {
+                "name": "OptionsSvg.tsx",
+                "relativePath": "src/components/Icon/svg/OptionsSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "PinnedSvg.tsx",
                 "relativePath": "src/components/Icon/svg/PinnedSvg.tsx",
-                "test": false,
-                "name": "PinnedSvg.tsx"
+                "test": false
             },
             {
+                "name": "PlusSvg.tsx",
+                "relativePath": "src/components/Icon/svg/PlusSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "ReturnKeySvg.tsx",
                 "relativePath": "src/components/Icon/svg/ReturnKeySvg.tsx",
-                "test": false,
-                "name": "ReturnKeySvg.tsx"
+                "test": false
             },
             {
+                "name": "SearchSvg.tsx",
                 "relativePath": "src/components/Icon/svg/SearchSvg.tsx",
-                "test": false,
-                "name": "SearchSvg.tsx"
+                "test": false
             },
             {
+                "name": "StationSvg.tsx",
                 "relativePath": "src/components/Icon/svg/StationSvg.tsx",
-                "test": false,
-                "name": "StationSvg.tsx"
+                "test": false
             },
             {
+                "name": "TrashSvg.tsx",
+                "relativePath": "src/components/Icon/svg/TrashSvg.tsx",
+                "test": false
+            },
+            {
+                "name": "index.ts",
                 "relativePath": "src/components/Icon/svg/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             }
         ],
         "mainFile": "src/components/Icon/index.ts",
