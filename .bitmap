@@ -135,157 +135,162 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/image@0.0.4": {
+    "station.catalog/image@0.0.5": {
         "files": [
             {
+                "name": "all.png",
                 "relativePath": "src/assets/images/all.png",
-                "test": false,
-                "name": "all.png"
+                "test": false
             },
             {
+                "name": "app-default.svg",
+                "relativePath": "src/assets/images/app-default.svg",
+                "test": false
+            },
+            {
+                "name": "badge.png",
                 "relativePath": "src/assets/images/badge.png",
-                "test": false,
-                "name": "badge.png"
+                "test": false
             },
             {
+                "name": "bank-building.png",
                 "relativePath": "src/assets/images/bank-building.png",
-                "test": false,
-                "name": "bank-building.png"
+                "test": false
             },
             {
+                "name": "blog.png",
                 "relativePath": "src/assets/images/blog.png",
-                "test": false,
-                "name": "blog.png"
+                "test": false
             },
             {
+                "name": "categorize.png",
                 "relativePath": "src/assets/images/categorize.png",
-                "test": false,
-                "name": "categorize.png"
+                "test": false
             },
             {
+                "name": "chat.png",
                 "relativePath": "src/assets/images/chat.png",
-                "test": false,
-                "name": "chat.png"
+                "test": false
             },
             {
+                "name": "cherry.png",
                 "relativePath": "src/assets/images/cherry.png",
-                "test": false,
-                "name": "cherry.png"
+                "test": false
             },
             {
+                "name": "combo-chart.png",
                 "relativePath": "src/assets/images/combo-chart.png",
-                "test": false,
-                "name": "combo-chart.png"
+                "test": false
             },
             {
+                "name": "company.png",
                 "relativePath": "src/assets/images/company.png",
-                "test": false,
-                "name": "company.png"
+                "test": false
             },
             {
+                "name": "content.png",
                 "relativePath": "src/assets/images/content.png",
-                "test": false,
-                "name": "content.png"
+                "test": false
             },
             {
+                "name": "design.png",
                 "relativePath": "src/assets/images/design.png",
-                "test": false,
-                "name": "design.png"
+                "test": false
             },
             {
+                "name": "filled-filter.png",
                 "relativePath": "src/assets/images/filled-filter.png",
-                "test": false,
-                "name": "filled-filter.png"
+                "test": false
             },
             {
+                "name": "headset.png",
                 "relativePath": "src/assets/images/headset.png",
-                "test": false,
-                "name": "headset.png"
+                "test": false
             },
             {
+                "name": "index.ts",
                 "relativePath": "src/assets/images/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             },
             {
+                "name": "law.png",
                 "relativePath": "src/assets/images/law.png",
-                "test": false,
-                "name": "law.png"
+                "test": false
             },
             {
+                "name": "like.png",
                 "relativePath": "src/assets/images/like.png",
-                "test": false,
-                "name": "like.png"
+                "test": false
             },
             {
+                "name": "lock.png",
                 "relativePath": "src/assets/images/lock.png",
-                "test": false,
-                "name": "lock.png"
+                "test": false
             },
             {
+                "name": "magnifying-glass.png",
                 "relativePath": "src/assets/images/magnifying-glass.png",
-                "test": false,
-                "name": "magnifying-glass.png"
+                "test": false
             },
             {
+                "name": "megaphone.png",
                 "relativePath": "src/assets/images/megaphone.png",
-                "test": false,
-                "name": "megaphone.png"
+                "test": false
             },
             {
+                "name": "mute-status.png",
                 "relativePath": "src/assets/images/mute-status.png",
-                "test": false,
-                "name": "mute-status.png"
+                "test": false
             },
             {
+                "name": "nas.png",
                 "relativePath": "src/assets/images/nas.png",
-                "test": false,
-                "name": "nas.png"
+                "test": false
             },
             {
+                "name": "network-drive.png",
                 "relativePath": "src/assets/images/network-drive.png",
-                "test": false,
-                "name": "network-drive.png"
+                "test": false
             },
             {
+                "name": "pie-chart.png",
                 "relativePath": "src/assets/images/pie-chart.png",
-                "test": false,
-                "name": "pie-chart.png"
+                "test": false
             },
             {
+                "name": "profile-default.svg",
                 "relativePath": "src/assets/images/profile-default.svg",
-                "test": false,
-                "name": "profile-default.svg"
+                "test": false
             },
             {
+                "name": "source-code.png",
                 "relativePath": "src/assets/images/source-code.png",
-                "test": false,
-                "name": "source-code.png"
+                "test": false
             },
             {
+                "name": "station-blue.svg",
                 "relativePath": "src/assets/images/station-blue.svg",
-                "test": false,
-                "name": "station-blue.svg"
+                "test": false
             },
             {
+                "name": "survey.png",
                 "relativePath": "src/assets/images/survey.png",
-                "test": false,
-                "name": "survey.png"
+                "test": false
             },
             {
+                "name": "trainers.png",
                 "relativePath": "src/assets/images/trainers.png",
-                "test": false,
-                "name": "trainers.png"
+                "test": false
             },
             {
+                "name": "Image.tsx",
                 "relativePath": "src/components/Image/Image.tsx",
-                "test": false,
-                "name": "Image.tsx"
+                "test": false
             },
             {
+                "name": "index.ts",
                 "relativePath": "src/components/Image/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             }
         ],
         "mainFile": "src/components/Image/index.ts",
