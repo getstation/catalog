@@ -1,5 +1,6 @@
 // generated file, do not modify its content
 import all from './all.png';
+import appDefault from './app-default.svg';
 import badge from './badge.png';
 import bankBuilding from './bank-building.png';
 import blog from './blog.png';
@@ -29,6 +30,7 @@ import trainers from './trainers.png';
 
 export enum Images {
 ALL = 'all',
+APP_DEFAULT = 'appDefault',
 BADGE = 'badge',
 BANK_BUILDING = 'bankBuilding',
 BLOG = 'blog',
@@ -59,6 +61,7 @@ TRAINERS = 'trainers',
 
 const Image = {
 [Images.ALL]: all,
+[Images.APP_DEFAULT]: appDefault,
 [Images.BADGE]: badge,
 [Images.BANK_BUILDING]: bankBuilding,
 [Images.BLOG]: blog,
