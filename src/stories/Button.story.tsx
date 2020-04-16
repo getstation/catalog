@@ -1,16 +1,30 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { boolean, text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import {storiesOf} from '@storybook/react';
+import {boolean, text} from '@storybook/addon-knobs';
+import {action} from '@storybook/addon-actions';
 import {createUseStyles} from 'react-jss';
 
+import Colors from '@components/Colors';
 import Button from '@components/Button';
-import { Images } from '@src/assets/images';
+import Image, {Images} from '@components/Image';
+import Icon, {Icons} from "@components/Icon";
+import Tooltip from "@components/Tooltip";
+import DropdownMenu from "@components/DropdownMenu";
+
 const appStyles = createUseStyles({
   button:{
     width: 265
+  },
+  custom: {
+    width: 420,
+    justifyContent: 'space-between',
+    padding: [0, 10, 0, 0],
+  },
+  workspace: {
+    width: 190,
+    justifyContent: 'space-between',
   }
-})
+});
 
 
 storiesOf('Components|Button', module)
@@ -40,4 +54,22 @@ storiesOf('Components|Button', module)
     ),
     {
       centered: { disable: true },
-    });
+    })
+  .add('Workspace (Team hub)', () => (
+    <Button onClick={e => action('onButtonClicked')(e)} className={appStyles().workspace} icon={Images.LIKE} text={'Station team'}>
+      <DropdownMenu items={[{text: 'option one'}, {text: 'option two'}]} styles={{space: 10, margin: '0 10px 0 auto'}}>
+        <Icon icon={Icons.OPTIONS} color={Colors.lightPrimaryTextColor}/>
+      </DropdownMenu>
+    </Button>
+  ))
+  .add('With slotted childrens', () => (
+      <Button onClick={e => action('onButtonClicked')(e)} className={appStyles().custom}>{{
+        left: <Tooltip text={'This is custom right content'}>
+                <Image image={Images.PROFILE_DEFAULT}/>
+              </Tooltip>,
+        main: <span>GrandMasterFesse</span>,
+        right: <DropdownMenu items={[{text: 'option one'}, {text: 'option two'}]}>
+                <Icon icon={Icons.PLUS}/>
+              </DropdownMenu>,
+      }}</Button>
+    ));
