@@ -31,7 +31,7 @@ storiesOf('Components|Button', module)
   })
   .add('Category (Team hub)', () => (
       <Button
-        icon={text('icon', Images.COMPANY)}
+        icon={text('icon', Images.CATEGORIZE)}
         text={text('text', 'Internal Tools')}
         subtext={text('subtext', '')}
         selected={boolean('selected', false)}
