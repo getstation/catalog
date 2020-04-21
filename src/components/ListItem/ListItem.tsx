@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, {ReactChild} from 'react';
 import color from 'color';
 import { createUseStyles } from 'react-jss';
 import Icon, { Icons } from '../Icon';
@@ -8,6 +8,7 @@ import Colors from '../Colors';
 import fallback from './favicon-placeholder.svg';
 
 type ListItemProps = {
+  children?: ReactChild | ReactChild[];
   onClick: (e: string) => void;
   className?: string;
   favIconUrl?: string | null;
@@ -16,6 +17,7 @@ type ListItemProps = {
   subtitle: string;
   type?: string;
   isRecent?: boolean;
+  isTeamhub?: boolean;
   isSelected?: boolean;
 };
 
@@ -78,6 +80,7 @@ const useStyles = (isRecent: boolean) =>
       boxSizing: 'border-box'
     },
     title: {
+      display: 'flex',
       color: Colors.lightPrimaryTextColor,
       fontSize: isRecent ? 12 : 13,
       fontWeight: isRecent ? 'normal' : 'bold',
@@ -130,10 +133,17 @@ const useStyles = (isRecent: boolean) =>
       width: 10,
       height: 10,
       padding: 3
+    },
+    tab: {
+      marginLeft: 12,
+      width: 8,
+      '& svg': {
+        fill: Colors.lightPrimaryTextColor,
+      }
     }
   });
 const ListItem = (props: ListItemProps) => {
-  const { url, favIconUrl, isRecent = false, type, title, subtitle, onClick, isSelected } = props;
+  const { children, url, favIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, onClick, isSelected } = props;
   const classes = useStyles(isRecent)();
   const className = classNames(classes.ListItem, { selected: isSelected });
 
@@ -141,7 +151,7 @@ const ListItem = (props: ListItemProps) => {
     <li title={url} className={className} onClick={() => onClick(url)} tabIndex={-1}>
       <Image image={favIconUrl || fallback} className={classes.appIcon} />
       <div className={classes.item}>
-        <span className={classes.title}>{title}</span>
+        <span className={classes.title}>{title}{isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}</span>
         <span className={classes.appName}>
           {subtitle}
           {isRecent && type === 'TAB' && (
@@ -154,7 +164,8 @@ const ListItem = (props: ListItemProps) => {
       <div className={classes.icon}>
         <Icon icon={Icons.RETURN_KEY} color={Colors.lightSecondaryTextColor} className={classes.returnKey} />
       </div>
-      {!isRecent && type === 'TAB' && (
+      {children}
+      {!isTeamhub && !isRecent && type === 'TAB' && (
         <div className={classes.arrow}>
           <Icon icon={Icons.ARROW_UP_LEFT} className={classes.arrowIcon} />
         </div>
