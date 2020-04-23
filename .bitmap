@@ -360,6 +360,24 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "station.catalog/shortcut@0.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/Shortcut/Shortcut.tsx",
+                "test": false,
+                "name": "Shortcut.tsx"
+            },
+            {
+                "relativePath": "src/components/Shortcut/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "mainFile": "src/components/Shortcut/index.ts",
+        "trackDir": "src/components/Shortcut",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "station.catalog/tooltip@0.0.3": {
         "files": [
             {
