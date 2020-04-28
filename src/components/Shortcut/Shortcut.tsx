@@ -9,6 +9,7 @@ type ShortcutProps = {
   keyClassName?: string;
   size?: number;
   keys: (Key | string)[] | Key | string;
+  OsxToPcMap?: {};
 };
 
 export enum Key {
@@ -35,6 +36,13 @@ export enum Key {
   HOME = '⇞',
   END = '⇟',
 
+}
+
+export const OsxToPc = {
+  [Key.COMMAND]: 'Alt',
+  [Key.OPTION]: Key.WIN,
+  [Key.CONTROL]: Key.CTRL,
+  [Key.ESCAPE]: Key.ESC
 }
 
 const useStyles = createUseStyles({
@@ -75,11 +83,15 @@ const useStyles = createUseStyles({
   }),
 });
 
-export const Shortcut = ({ keys, size, className, keyClassName }: ShortcutProps) => {
+export const Shortcut = ({ keys, size, OsxToPcMap = OsxToPc, className, keyClassName }: ShortcutProps) => {
   const classes = useStyles(size);
+  const isOSX = navigator.platform.indexOf('Mac') > -1;
   return (
     <div className={classNames(classes.container, className)}>
-      {[...(keys instanceof Array) ? keys : [keys]].map(key => <kbd className={classNames(classes.key, (key.length > 1) && classes.padding, keyClassName)}>{key}</kbd>)}
+      {[...(keys instanceof Array) ? keys : [keys]].map(key => {
+        const platformKey = isOSX ? key : (OsxToPcMap[key] || key);
+        return <kbd className={classNames(classes.key, (platformKey.length > 1) && classes.padding, keyClassName)}>{platformKey}</kbd>
+      })}
     </div>
   );
 };
