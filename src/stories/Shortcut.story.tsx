@@ -33,4 +33,5 @@ storiesOf('Components|Shortcut', module)
   .add('Custom', () => {
     const classes = useStyles();
     return (<Shortcut keys={[Key.COMMAND, 'K']} size={number('size', 25, { range: true, min: 10, max: 800, step: 1 })} className={classes.shortcut} keyClassName={classes.key} />);
-  });
+  })
+  .add('"or" separator', () => (<Shortcut keys={[Key.TAB, 'or', Key.SHIFT, Key.TAB]}/>));
