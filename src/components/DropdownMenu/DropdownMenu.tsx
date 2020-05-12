@@ -75,6 +75,14 @@ const useStyles = createUseStyles({
   unchecked: {
     height: 25,
     width: 20,
+  },
+  opened: {
+    display: 'flex',
+    opacity: 1,
+    transform: 'scale(1)',
+  },
+  selected: {
+    backgroundColor: Colors.lightTertiaryBackgroundColor
   }
 });
 
@@ -83,6 +91,8 @@ const DropdownMenu = ({ children,
                         styles,
                         checkmark = false,
                         closeOnSelect = false,
+                        opened,
+                        selected,
                         onSelect,
                         className,
                         itemClassName,
@@ -91,8 +101,8 @@ const DropdownMenu = ({ children,
   return (
     <button className={classNames(classes.root, className)}>
       {children?.trigger || children}
-      <ul className={classNames(classes.items, listClassName)}>{items ? items.map(item =>
-        <li key={item.text} className={classNames(classes.item, itemClassName)} onClick={_ => !(onSelect) || onSelect(item)} tabIndex={closeOnSelect ? 1 : undefined}>
+      <ul className={classNames(classes.items, listClassName, opened && classes.opened)}>{items ? items.map(item =>
+        <li key={item.text} className={classNames(classes.item, itemClassName, selected?.text === item.text && classes.selected)} onClick={_ => !(onSelect) || onSelect(item)} tabIndex={closeOnSelect ? 1 : undefined}>
           {checkmark && (item.selected
             ? <Icon icon={Icons.CHECKMARK} size={12} color={Colors.lightPrimaryTextColor} className={classes.selectIcon}/>
             : <div className={classes.unchecked}/>

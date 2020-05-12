@@ -42,6 +42,8 @@ export type DropdownMenuProps = {
    * @param e: DropdownMenuOption
    * @desc called on item click with item object passed to param
    */
+  opened?: boolean;
+  selected?: DropdownMenuOption;
   onSelect?: (e: DropdownMenuOption) => void;
   /**
    * @name className

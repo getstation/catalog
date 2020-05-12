@@ -8,19 +8,22 @@ import Icon, {Icons} from '@components/Icon';
 
 import {createUseStyles} from 'react-jss';
 import {action} from "@storybook/addon-actions";
-import {boolean} from "@storybook/addon-knobs";
+import {boolean, number, select} from "@storybook/addon-knobs";
 import {Images} from "@src/assets/images";
 import Image from "@components/Image";
 import Tooltip, {TooltipPositions} from "@components/Tooltip";
+import {SelectTypeOptionsProp} from "@storybook/addon-knobs/dist/components/types";
 
 const items = [
   {
     icon: Icons.EDITOR,
-    text: 'Rename workspace'
+    text: 'Rename workspace',
+    label: 'Rename workspace'
   },
   {
     icon: Icons.ARCHIVE,
-    text: 'Archive workspace'
+    text: 'Archive workspace',
+    label: 'Archive workspace'
   }
 ];
 
@@ -90,7 +93,8 @@ const useStyle = createUseStyles({
 storiesOf('Components|DropdownMenu', module)
   .addParameters({ options: { selectedPanel: 'storybook/DropdownMenu' } })
   .add('Basic usage', () => (
-    <DropdownMenu items={items} onSelect={action('onSelect')} closeOnSelect={boolean('close menu on select', true)}>
+    // @ts-ignore for select knob (sigh)
+    <DropdownMenu items={items} onSelect={action('onSelect')} closeOnSelect={boolean('close menu on select', true)} opened={boolean('opened', true)} selected={select('selected', items, items[0])}>
       <Icon icon={Icons.OPTIONS} size={25} color={Colors.lightPrimaryTextColor}/>
     </DropdownMenu>
   ))
