@@ -135,7 +135,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/image@0.0.5": {
+    "station.catalog/image@0.0.6": {
         "files": [
             {
                 "name": "all.png",
@@ -145,6 +145,11 @@
             {
                 "name": "app-default.svg",
                 "relativePath": "src/assets/images/app-default.svg",
+                "test": false
+            },
+            {
+                "name": "app-placeholder.svg",
+                "relativePath": "src/assets/images/app-placeholder.svg",
                 "test": false
             },
             {
@@ -165,6 +170,11 @@
             {
                 "name": "categorize.png",
                 "relativePath": "src/assets/images/categorize.png",
+                "test": false
+            },
+            {
+                "name": "category-placeholder.svg",
+                "relativePath": "src/assets/images/category-placeholder.svg",
                 "test": false
             },
             {
@@ -260,6 +270,11 @@
             {
                 "name": "profile-default.svg",
                 "relativePath": "src/assets/images/profile-default.svg",
+                "test": false
+            },
+            {
+                "name": "profile-placeholder.svg",
+                "relativePath": "src/assets/images/profile-placeholder.svg",
                 "test": false
             },
             {
