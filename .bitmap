@@ -37,6 +37,24 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "station.catalog/dropdown-menu@0.0.4": {
+        "files": [
+            {
+                "relativePath": "src/components/DropdownMenu/DropdownMenu.tsx",
+                "test": false,
+                "name": "DropdownMenu.tsx"
+            },
+            {
+                "relativePath": "src/components/DropdownMenu/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "mainFile": "src/components/DropdownMenu/index.ts",
+        "trackDir": "src/components/DropdownMenu",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "station.catalog/icon@0.0.5": {
         "files": [
             {
@@ -360,7 +378,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/shortcut@0.0.2": {
+    "station.catalog/shortcut@0.0.3": {
         "files": [
             {
                 "relativePath": "src/components/Shortcut/Shortcut.tsx",
