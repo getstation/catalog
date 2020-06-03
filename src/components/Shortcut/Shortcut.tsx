@@ -79,7 +79,7 @@ const useStyles = createUseStyles({
     height: (size: number) => size,
     fontWeight: 600,
     backgroundColor: Colors.lightSecondaryBackgroundColor,
-    border: (size: number) => `${size / 25}px solid ${Colors.lightTertiaryBackgroundColor}`,
+    border: (size: number) => `${size / 25}px solid ${Colors.lightSecondaryHoverBackgroundColor}`,
     borderRadius: (size: number) => size / 6.25,
   },
   padding: (size: number) => ({

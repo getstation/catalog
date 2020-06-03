@@ -38,14 +38,14 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     border: 'none',
     padding: 0,
-    backgroundColor: (props: ButtonProps) => Colors[props.selected ? 'lightTertiaryBackgroundColor' : 'lightPrimaryBackgroundColor'],
+    backgroundColor: (props: ButtonProps) => Colors[props.selected ? 'lightSecondaryHoverBackgroundColor' : 'lightPrimaryBackgroundColor'],
     height: (props: ButtonProps) => props.subtext ? 60 : 29,
     width: '100%',
     borderRadius: 30,
     boxSizing: 'border-box',
     outline: 'none',
     '&:hover, &:focus, &:active': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor,
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor,
       '& $text': {
         color: Colors.lightPrimaryTextColor
       }
