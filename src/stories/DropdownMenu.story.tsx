@@ -58,7 +58,7 @@ const useStyle = createUseStyles({
     paddingRight: '24px',
     color: Colors.lightPrimaryTextColor,
     '&:hover': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor
     },
   },
   icon: {
@@ -82,7 +82,7 @@ const useStyle = createUseStyles({
     borderRadius: 2,
     backgroundColor: Colors.lightSecondaryBackgroundColor,
     '&>:focus': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor,
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor,
     },
     '&>:last-child': {
       width: 7,

@@ -17,7 +17,7 @@ const types = {
 const useStyle = createUseStyles({
   icon: {
     '&:hover': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor,
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor,
     },
     alignSelf: 'center',
     height: 12,
