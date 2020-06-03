@@ -95,9 +95,8 @@
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "bit build",
-    "test": "yarn test",
     "gen:icons": "ts-node --transpile-only scripts/generate-icons.ts",
-    "gen:images": "node scripts/genIconsModules.mjs",
+    "gen:images": "node --experimental-modules scripts/genIconsModules.mjs",
     "chromatic": "chromatic --project-token=q65anlqcdyq"
   }
 }

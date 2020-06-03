@@ -44,4 +44,4 @@ const Image = (props: ImageProps) => {
   );
 };
 
-export default Image;
+export default React.memo(Image);
