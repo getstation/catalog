@@ -46,4 +46,4 @@ const Icon = (props: IconProps) => {
 	);
 };
 
-export default Icon;
+export default React.memo(Icon);

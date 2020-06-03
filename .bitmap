@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/icon@0.0.6": {
+    "station.catalog/icon@0.0.7": {
         "files": [
             {
                 "name": "Icon.tsx",
