@@ -135,7 +135,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/image@0.0.6": {
+    "station.catalog/image@0.0.7": {
         "files": [
             {
                 "name": "all.png",
