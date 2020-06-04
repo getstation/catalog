@@ -1,15 +1,15 @@
 import React from 'react';
-import {storiesOf} from '@storybook/react';
-import {boolean, text} from '@storybook/addon-knobs';
-import {action} from '@storybook/addon-actions';
-import {createUseStyles} from 'react-jss';
+import { storiesOf } from '@storybook/react';
+import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { createUseStyles } from 'react-jss';
 
 import Colors from '@components/Colors';
 import Button from '@components/Button';
-import Image, {Images} from '@components/Image';
-import Icon, {Icons} from "@components/Icon";
-import Tooltip from "@components/Tooltip";
-import DropdownMenu from "@components/DropdownMenu";
+import Image, { Images } from '@components/Image';
+import Icon, { Icons } from '@components/Icon';
+import Tooltip from '@components/Tooltip';
+import DropdownMenu from '@components/DropdownMenu';
 
 const appStyles = createUseStyles({
   button:{
@@ -40,6 +40,22 @@ storiesOf('Components|Button', module)
       className={style.button}
     />)
   },
+  {
+    centered: { disable: true },
+  })
+  .add('Application (AppStore minified)', () => {
+      const style = appStyles();
+      return (<Button
+        icon={text('icon', 'https://zeplin.io/img/favicon/228x228.png')}
+        text={text('text', 'Zeplin')}
+        subtext={text('subtext', "Design & Creativity")}
+        selected={boolean('selected', false)}
+        onClick={e => action('onButtonClicked')(e)}
+        className={style.button}
+      >
+        <Icon icon={Icons.PLUS}/>
+      </Button>)
+    },
   {
     centered: { disable: true },
   })
