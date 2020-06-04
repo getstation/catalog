@@ -55,17 +55,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/colors@0.0.3": {
+    "station.catalog/colors@0.0.4": {
         "files": [
             {
+                "name": "colors.ts",
                 "relativePath": "src/components/Colors/colors.ts",
-                "test": false,
-                "name": "colors.ts"
+                "test": false
             },
             {
+                "name": "index.ts",
                 "relativePath": "src/components/Colors/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             }
         ],
         "mainFile": "src/components/Colors/colors.ts",
