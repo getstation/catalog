@@ -102,7 +102,7 @@ const DropdownMenu = ({ children,
     <button className={classNames(classes.root, className)}>
       {children?.trigger || children}
       <ul className={classNames(classes.items, listClassName, opened && classes.opened)}>{items ? items.map(item =>
-        <li key={item.text} className={classNames(classes.item, itemClassName, selected?.text === item.text && classes.selected)} onClick={_ => !(onSelect) || onSelect(item)} tabIndex={closeOnSelect ? 1 : undefined}>
+        <li key={item.text} className={classNames(classes.item, itemClassName, selected?.text === item.text && classes.selected)} onClick={_ => onSelect && onSelect(item)} tabIndex={closeOnSelect ? 1 : undefined}>
           {checkmark && (item.selected
             ? <Icon icon={Icons.CHECKMARK} size={12} color={Colors.lightPrimaryTextColor} className={classes.selectIcon}/>
             : <div className={classes.unchecked}/>

@@ -85,8 +85,8 @@ const Button = ({ children, icon, text, subtext, onClick, className, selected }:
     <div onClick={(_) => onClick(text || '')} className={classNames(classes.button, className)}>
       {children?.left ? children.left : <Image image={icon || ''} className={classes.image} />}
       {children?.main ? children.main : <div className={classes.texts}>
-        <span className={classes.text}>{text}</span>
-        {subtext && <span className={classes.subtext}>{subtext}</span>}
+        <span className={classes.text} title={text}>{text}</span>
+        {subtext && <span className={classes.subtext} title={subtext}>{subtext}</span>}
       </div>}
       {children?.right || children}
     </div>

@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": false
     },
-    "station.catalog/button@0.0.8": {
+    "station.catalog/button@0.0.11": {
         "files": [
             {
                 "name": "Button.tsx",
@@ -73,7 +73,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/dropdown-menu@0.0.6": {
+    "station.catalog/dropdown-menu@0.0.8": {
         "files": [
             {
                 "name": "DropdownMenu.tsx",
