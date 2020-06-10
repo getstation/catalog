@@ -50,7 +50,7 @@ const useStyles = createUseStyles({
     padding: [0, 18],
     color: Colors.lightPrimaryTextColor,
     '&:hover': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor
     }
   },
   icon: {
@@ -82,7 +82,7 @@ const useStyles = createUseStyles({
     transform: 'scale(1)',
   },
   selected: {
-    backgroundColor: Colors.lightTertiaryBackgroundColor
+    backgroundColor: Colors.lightSecondaryHoverBackgroundColor
   }
 });
 
