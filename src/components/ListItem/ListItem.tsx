@@ -72,7 +72,7 @@ const useStyles = createUseStyles({
       overflow: 'hidden'
     },
     appIcon: {
-      width: (isRecent: boolean) => isRecent ? 42 : 72,
+      width: (isRecent: boolean) => `${isRecent ? 42 : 72} !important`,
       minWidth: (isRecent: boolean) => isRecent ? 42 : 72,
       marginRight: (isRecent: boolean) => isRecent ? 5 : 'inherit',
       padding: (isRecent: boolean) => isRecent ? [5, 5, 20, 20] : [17, 20, 16, 32],
