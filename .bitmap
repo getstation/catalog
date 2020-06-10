@@ -124,9 +124,34 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/BoardSvg.tsx",
+                "test": false,
+                "name": "BoardSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/BranchSvg.tsx",
+                "test": false,
+                "name": "BranchSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ChannelSvg.tsx",
+                "test": false,
+                "name": "ChannelSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ChatSvg.tsx",
+                "test": false,
+                "name": "ChatSvg.tsx"
+            },
+            {
                 "name": "CheckmarkSvg.tsx",
                 "relativePath": "src/components/Icon/svg/CheckmarkSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/CodeSvg.tsx",
+                "test": false,
+                "name": "CodeSvg.tsx"
             },
             {
                 "name": "CogSvg.tsx",
@@ -137,6 +162,11 @@
                 "name": "CrossSvg.tsx",
                 "relativePath": "src/components/Icon/svg/CrossSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/DocSvg.tsx",
+                "test": false,
+                "name": "DocSvg.tsx"
             },
             {
                 "name": "DownloadSvg.tsx",
@@ -154,9 +184,24 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/ExtensionSvg.tsx",
+                "test": false,
+                "name": "ExtensionSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/FileSvg.tsx",
+                "test": false,
+                "name": "FileSvg.tsx"
+            },
+            {
                 "name": "FolderSvg.tsx",
                 "relativePath": "src/components/Icon/svg/FolderSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/GraphSvg.tsx",
+                "test": false,
+                "name": "GraphSvg.tsx"
             },
             {
                 "name": "HeartSvg.tsx",
@@ -167,6 +212,11 @@
                 "name": "HomeSvg.tsx",
                 "relativePath": "src/components/Icon/svg/HomeSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/IssueSvg.tsx",
+                "test": false,
+                "name": "IssueSvg.tsx"
             },
             {
                 "name": "LinkSvg.tsx",
@@ -189,6 +239,11 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/PageSvg.tsx",
+                "test": false,
+                "name": "PageSvg.tsx"
+            },
+            {
                 "name": "PinnedSvg.tsx",
                 "relativePath": "src/components/Icon/svg/PinnedSvg.tsx",
                 "test": false
@@ -197,6 +252,11 @@
                 "name": "PlusSvg.tsx",
                 "relativePath": "src/components/Icon/svg/PlusSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/PrSvg.tsx",
+                "test": false,
+                "name": "PrSvg.tsx"
             },
             {
                 "name": "ReturnKeySvg.tsx",
@@ -209,9 +269,24 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/SheetSvg.tsx",
+                "test": false,
+                "name": "SheetSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/SlideSvg.tsx",
+                "test": false,
+                "name": "SlideSvg.tsx"
+            },
+            {
                 "name": "StationSvg.tsx",
                 "relativePath": "src/components/Icon/svg/StationSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ThunderSvg.tsx",
+                "test": false,
+                "name": "ThunderSvg.tsx"
             },
             {
                 "name": "TrashSvg.tsx",
@@ -406,7 +481,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/list-item@0.0.11": {
+    "station.catalog/list-item@0.0.15": {
         "files": [
             {
                 "name": "ListItem.tsx",
