@@ -74,7 +74,7 @@ const useStyles = createUseStyles({
     ],
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightTertiaryBackgroundColor,
+    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightSecondaryHoverBackgroundColor,
     borderRadius: (styles: TooltipStyles) => styles?.container?.radius || 3,
     opacity: 0,
     transitionDuration: (styles: TooltipStyles) => styles?.exitDuration || 100,
