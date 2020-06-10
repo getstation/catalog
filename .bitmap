@@ -55,7 +55,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/colors@0.0.4": {
+    "station.catalog/colors@0.0.5": {
         "files": [
             {
                 "name": "colors.ts",
