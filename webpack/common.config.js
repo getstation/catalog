@@ -1,14 +1,14 @@
 /* eslint-disable functional/immutable-data */
-import * as Webpack from 'webpack';
-import * as path from 'path';
+const path = require('path');
+const Webpack = require('webpack');
 
 const rootFolder = path.resolve(__dirname, '..');
 const srcFolder = path.join(rootFolder, 'src');
 
 // common configuration
-const config: Webpack.ConfigurationFactory = (_, argv) => {
+const config = (_, argv) => {
   // Default config for PROD
-  const conf: Webpack.Configuration = {
+  const conf = {
     devtool: 'source-map',
     resolve: {
       // ⚠️ .mjs to add BEFORE all the others, because: https://github.com/graphql/graphql-js/issues/1272
@@ -21,7 +21,6 @@ const config: Webpack.ConfigurationFactory = (_, argv) => {
     },
     module: {
       rules: [
-        { test: /\.tsx?$/, loader: 'ts-loader' },
         {
           test: /\.(svg|png)$/,
           use: [
@@ -46,4 +45,4 @@ const config: Webpack.ConfigurationFactory = (_, argv) => {
   return conf;
 };
 
-export default config;
+module.exports = config;

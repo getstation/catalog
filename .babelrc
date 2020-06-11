@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "@babel/preset-typescript",
+      {
+        "allExtensions": true,
+        "isTSX": true
+      }
+    ],
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "linaria/babel"
+  ],
+  "plugins": ["@babel/plugin-proposal-optional-chaining"]
+}

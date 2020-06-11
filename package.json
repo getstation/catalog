@@ -49,6 +49,8 @@
   "dependencies": {
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
+    "linaria": "^2.0.0-alpha.5",
+    "polished": "^3.6.4",
     "react-jss": "^10.0.4",
     "typescript": "^3.8.3",
     "url-loader": "^3.0.0",
@@ -60,6 +62,10 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-backgrounds": "^5.3.13",
@@ -81,12 +87,16 @@
     "change-case": "^4.1.0",
     "chromatic": "^4.0.2",
     "color": "^3.1.2",
+    "css-loader": "^3.5.3",
     "glob": "^7.1.6",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
+    "mini-css-extract-plugin": "^0.9.0",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
     "prettier": "^1.19.1",
+    "stylelint": "^13.6.0",
+    "stylelint-config-standard": "^20.0.0",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2"
   },
