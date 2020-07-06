@@ -21,7 +21,8 @@ type ListItemProps = {
   isSelected?: boolean;
 };
 
-const useStyles = createUseStyles({
+const useStyles = (isRecent: boolean) =>
+  createUseStyles({
     ListItem: {
       fontFamily: [
         '-apple-system',
@@ -36,7 +37,7 @@ const useStyles = createUseStyles({
         'Segoe UI Symbol'
       ],
       width: '100%',
-      height: (isRecent: boolean) => isRecent ? 42 : 53,
+      height: isRecent ? 42 : 53,
       backgroundColor: Colors.lightPrimaryBackgroundColor,
       listStyle: 'none',
       display: 'flex',
@@ -66,23 +67,23 @@ const useStyles = createUseStyles({
       display: 'flex',
       flexDirection: 'column',
       flexWrap: 'nowrap',
-      justifyContent: (isRecent: boolean) => `space-${isRecent ? 'around' : 'evenly'}`,
+      justifyContent: `space-${isRecent ? 'around' : 'evenly'}`,
       alignItems: 'flex-start',
       flexGrow: 1,
       overflow: 'hidden'
     },
     appIcon: {
-      width: (isRecent: boolean) => `${isRecent ? 42 : 72} !important`,
-      minWidth: (isRecent: boolean) => isRecent ? 42 : 72,
-      marginRight: (isRecent: boolean) => isRecent ? 5 : 'inherit',
-      padding: (isRecent: boolean) => isRecent ? [5, 5, 20, 20] : [17, 20, 16, 32],
+      width: isRecent ? 42 : 72,
+      minWidth: isRecent ? 42 : 72,
+      marginRight: isRecent ? 5 : 'inherit',
+      padding: isRecent ? [5, 5, 20, 20] : [17, 20, 16, 32],
       boxSizing: 'border-box'
     },
     title: {
       display: 'flex',
       color: Colors.lightPrimaryTextColor,
-      fontSize: (isRecent: boolean) => isRecent ? 12 : 13,
-      fontWeight: (isRecent: boolean) => isRecent ? 'normal' : 'bold',
+      fontSize: isRecent ? 12 : 13,
+      fontWeight: isRecent ? 'normal' : 'bold',
       fontStyle: 'normal',
       letterSpacing: 0,
       textOverflow: 'ellipsis',
@@ -92,7 +93,7 @@ const useStyles = createUseStyles({
     },
     appName: {
       color: Colors.lightSecondaryTextColor,
-      fontSize: (isRecent: boolean) => isRecent ? 10 : 11,
+      fontSize: isRecent ? 10 : 11,
       fontWeight: 600,
       fontStyle: 'normal',
       letterSpacing: 0,
@@ -113,13 +114,13 @@ const useStyles = createUseStyles({
     icon: {
       display: 'none',
       visibility: 'hidden',
-      marginRight: (isRecent: boolean) => isRecent ? 20 : 30,
+      marginRight: isRecent ? 20 : 30,
       marginLeft: 10
     },
     arrow: {
       display: 'inherit',
       visibility: 'inherit',
-      marginRight: (isRecent: boolean) => isRecent ? 20 : 30,
+      marginRight: isRecent ? 20 : 30,
       marginLeft: 10
     },
     arrowIcon: {
@@ -143,7 +144,7 @@ const useStyles = createUseStyles({
   });
 const ListItem = (props: ListItemProps) => {
   const { children, url, favIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, onClick, isSelected } = props;
-  const classes = useStyles(isRecent);
+  const classes = useStyles(isRecent)();
   const className = classNames(classes.ListItem, { selected: isSelected });
 
   return (
