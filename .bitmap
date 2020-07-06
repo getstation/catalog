@@ -504,17 +504,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/shortcut@0.0.3": {
+    "station.catalog/shortcut@0.0.5": {
         "files": [
             {
+                "name": "Shortcut.tsx",
                 "relativePath": "src/components/Shortcut/Shortcut.tsx",
-                "test": false,
-                "name": "Shortcut.tsx"
+                "test": false
             },
             {
+                "name": "index.ts",
                 "relativePath": "src/components/Shortcut/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             }
         ],
         "mainFile": "src/components/Shortcut/index.ts",

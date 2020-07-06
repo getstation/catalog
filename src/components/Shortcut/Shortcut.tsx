@@ -79,7 +79,7 @@ const useStyles = createUseStyles({
     height: (size: number) => size,
     fontWeight: 600,
     backgroundColor: Colors.lightSecondaryBackgroundColor,
-    border: (size: number) => `${size / 25}px solid ${Colors.lightTertiaryBackgroundColor}`,
+    border: (size: number) => `${size / 25}px solid ${Colors.lightSecondaryHoverBackgroundColor}`,
     borderRadius: (size: number) => size / 6.25,
   },
   padding: (size: number) => ({
@@ -97,11 +97,11 @@ export const Shortcut = ({ keys, size = 25, OsxToPcMap = OsxToPc, className, key
   const isOSX = navigator.platform.indexOf('Mac') > -1;
   return (
     <div className={classNames(classes.container, className)}>
-      {[...(keys instanceof Array) ? keys : [keys]].map(key => {
+      {[...(keys instanceof Array) ? keys : [keys]].map((key, index) => {
         const platformKey = isOSX ? key : (OsxToPcMap[key] || key);
         return (platformKey === separator)
-          ? <span className={classNames(classes.separator, separatorClassName)}>{platformKey}</span>
-          : <kbd className={classNames(classes.key, (platformKey.length > 1) && classes.padding, keyClassName)}>{platformKey}</kbd>
+          ? <span key={index} className={classNames(classes.separator, separatorClassName)}>{platformKey}</span>
+          : <kbd key={index} className={classNames(classes.key, (platformKey.length > 1) && classes.padding, keyClassName)}>{platformKey}</kbd>
       })}
     </div>
   );
