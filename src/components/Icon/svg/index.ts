@@ -5,6 +5,7 @@ import ArrowUpLeftSvg from './ArrowUpLeftSvg';
 import ArrowsUpDownSvg from './ArrowsUpDownSvg';
 import BoardSvg from './BoardSvg';
 import BranchSvg from './BranchSvg';
+import BubbleSvg from './BubbleSvg';
 import ChannelSvg from './ChannelSvg';
 import ChatSvg from './ChatSvg';
 import CheckmarkSvg from './CheckmarkSvg';
@@ -45,6 +46,7 @@ export enum Icons {
   ARROWS_UP_DOWN = 'arrows-up-down',
   BOARD = 'board',
   BRANCH = 'branch',
+  BUBBLE = 'bubble',
   CHANNEL = 'channel',
   CHAT = 'chat',
   CHECKMARK = 'checkmark',
@@ -90,6 +92,7 @@ const SvgIcon: SvgComponents = {
   [Icons.ARROWS_UP_DOWN]: ArrowsUpDownSvg,
   [Icons.BOARD]: BoardSvg,
   [Icons.BRANCH]: BranchSvg,
+  [Icons.BUBBLE]: BubbleSvg,
   [Icons.CHANNEL]: ChannelSvg,
   [Icons.CHAT]: ChatSvg,
   [Icons.CHECKMARK]: CheckmarkSvg,
