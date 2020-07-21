@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classNames from 'classnames';
 
 interface ModalContentProps {
   className?: string;
@@ -15,7 +16,7 @@ const useStyles = createUseStyles({
 function ModalContent(props: ModalContentProps) {
   const classes = useStyles();
   return (
-    <div className={`${classes.root} ${props.className}`}>
+    <div className={classNames(classes.root, props.className)}>
       {props.children}
     </div>
   );
