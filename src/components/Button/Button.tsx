@@ -13,6 +13,7 @@ type ButtonProps = {
   selected?: boolean;
   onClick: (e: string) => void;
   className?: string;
+  variant?: string;
 };
 
 type ButtonSlots = {
@@ -36,16 +37,16 @@ const useStyles = createUseStyles({
     ],
     display: 'flex',
     alignItems: 'center',
-    border: 'none',
-    padding: 0,
-    backgroundColor: (props: ButtonProps) => Colors[props.selected ? 'lightTertiaryBackgroundColor' : 'lightPrimaryBackgroundColor'],
+    border: (props: ButtonProps) => props.variant === 'primary' ? 'none' : `solid 1px ${Colors.lightSecondaryBorderColor}`,
+    padding: (props: ButtonProps) => props.icon ? 0 : '0 11px',
+    backgroundColor: (props: ButtonProps) => Colors[props.selected ? 'lightSecondaryHoverBackgroundColor' : 'lightPrimaryBackgroundColor'],
     height: (props: ButtonProps) => props.subtext ? 60 : 29,
     width: '100%',
     borderRadius: 30,
     boxSizing: 'border-box',
     outline: 'none',
     '&:hover, &:focus, &:active': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor,
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor,
       '& $text': {
         color: Colors.lightPrimaryTextColor
       }
@@ -78,12 +79,13 @@ const useStyles = createUseStyles({
     marginTop: 2
   }
 });
-const Button = ({ children, icon, text, subtext, onClick, className, selected }: ButtonProps) => {
-  const classes = useStyles({subtext, selected});
+
+const Button = ({ children, icon, text, subtext, onClick, className, selected, variant = 'primary' }: ButtonProps) => {
+  const classes = useStyles({subtext, selected, variant, icon});
 
   return (
     <div onClick={(_) => onClick(text || '')} className={classNames(classes.button, className)}>
-      {children?.left ? children.left : <Image image={icon || ''} className={classes.image} />}
+      {children?.left ? children.left : icon ? <Image image={icon} className={classes.image} /> : null}
       {children?.main ? children.main : <div className={classes.texts}>
         <span className={classes.text} title={text}>{text}</span>
         {subtext && <span className={classes.subtext} title={subtext}>{subtext}</span>}

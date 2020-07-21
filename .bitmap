@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": false
     },
-    "station.catalog/button@0.0.10": {
+    "station.catalog/button@0.0.12": {
         "files": [
             {
                 "name": "Button.tsx",
@@ -504,7 +504,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/shortcut@0.0.5": {
+    "station.catalog/shortcut@0.0.6": {
         "files": [
             {
                 "name": "Shortcut.tsx",
