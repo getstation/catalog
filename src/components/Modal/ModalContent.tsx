@@ -16,7 +16,7 @@ function ModalContent(props: ModalContentProps) {
   const classes = useStyles();
   return (
     <div className={`${classes.root} ${props.className}`}>
-      <span>Content</span>
+      {props.children}
     </div>
   );
 }
