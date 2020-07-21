@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classNames from 'classnames';
 import ModalHead from './ModalHead';
 import ModalContent from './ModalContent';
 import Colors from "../Colors";
@@ -8,6 +9,7 @@ interface ModalProps {
   children: JSX.Element | JSX.Element[];
   open: boolean;
   onClose: () => void;
+  className?: string;
 }
 
 const useStyles = createUseStyles({
@@ -23,6 +25,7 @@ const useStyles = createUseStyles({
     zIndex: '1100',
     border: 'none',
     padding: 0,
+    margin: 0,
     '&::backdrop': {
       background: Colors.lightPrimaryBackgroundColor,
       opacity: 0.6,
@@ -48,7 +51,7 @@ function Modal(props: ModalProps) {
   if (!props.open) return null;
 
   return (
-    <dialog className={classes.root} ref={modalRef}>
+    <dialog className={classNames(classes.root, props.className)} ref={modalRef}>
       {props.children}
     </dialog>
   );
