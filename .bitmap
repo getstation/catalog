@@ -98,6 +98,11 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/BubbleSvg.tsx",
+                "test": false,
+                "name": "BubbleSvg.tsx"
+            },
+            {
                 "name": "ChannelSvg.tsx",
                 "relativePath": "src/components/Icon/svg/ChannelSvg.tsx",
                 "test": false
@@ -111,6 +116,11 @@
                 "name": "CheckmarkSvg.tsx",
                 "relativePath": "src/components/Icon/svg/CheckmarkSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ChevronRightSvg.tsx",
+                "test": false,
+                "name": "ChevronRightSvg.tsx"
             },
             {
                 "name": "CodeSvg.tsx",
@@ -146,6 +156,11 @@
                 "name": "EditorSvg.tsx",
                 "relativePath": "src/components/Icon/svg/EditorSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ExclamationSvg.tsx",
+                "test": false,
+                "name": "ExclamationSvg.tsx"
             },
             {
                 "name": "ExtensionSvg.tsx",
