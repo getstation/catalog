@@ -23,6 +23,10 @@ const useStyles = createUseStyles({
     zIndex: '1100',
     border: 'none',
     padding: 0,
+    '&::backdrop': {
+      background: Colors.lightPrimaryBackgroundColor,
+      opacity: 0.6,
+    },
   },
 });
 
