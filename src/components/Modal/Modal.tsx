@@ -7,7 +7,7 @@ import Colors from "../Colors";
 interface ModalProps {
   children: JSX.Element | JSX.Element[];
   open: boolean;
-  onEscKey?: () => void;
+  onClose: () => void;
 }
 
 const useStyles = createUseStyles({
@@ -21,43 +21,32 @@ const useStyles = createUseStyles({
     left: '50%',
     transform: 'translate(-50%, -50%)',
     zIndex: '1100',
-  },
-  dimmer: {
-    position: 'absolute',
-    top: '0',
-    background: Colors.lightPrimaryBackgroundColor,
-    opacity: '0.8',
-    width: '100vw',
-    height: '100vh',
-    zIndex: '1000',
+    border: 'none',
+    padding: 0,
   },
 });
 
 function Modal(props: ModalProps) {
   const classes = useStyles();
-  const modalRef = React.useRef() as React.MutableRefObject<HTMLInputElement>;
+  const modalRef = React.useRef() as React.MutableRefObject<HTMLDialogElement>;
 
   React.useEffect(() => {
     if (modalRef.current) {
-      modalRef.current.focus();
+      if (props.open) {
+        modalRef.current.showModal();
+      }
+      modalRef.current.addEventListener('close', () => {
+        props.onClose();
+      });
     }
   });
 
   if (!props.open) return null;
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape' && props.onEscKey) {
-      props.onEscKey();
-    }
-  };
-
   return (
-    <>
-      <div className={classes.dimmer} />
-      <div className={classes.root} tabIndex={0} onKeyDown={handleKeyDown} ref={modalRef}>
-        {props.children}
-      </div>
-    </>
+    <dialog className={classes.root} ref={modalRef}>
+      {props.children}
+    </dialog>
   );
 }
 

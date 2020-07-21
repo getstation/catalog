@@ -36,7 +36,7 @@ storiesOf('Components|Modal', module)
       return (
         <div>
           <button onClick={() => setModalState(true)}>open modal</button>
-          <Modal open={modalState} onEscKey={handleClose}>
+          <Modal open={modalState} onClose={handleClose}>
             <Modal.Head title="Manage Slack integration" onClose={handleClose} />
             <Modal.Content>Hello</Modal.Content>
           </Modal>
