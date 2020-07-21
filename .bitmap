@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/dropdown-menu@0.0.9": {
+    "station.catalog/dropdown-menu@0.0.10": {
         "files": [
             {
                 "name": "DropdownMenu.tsx",
@@ -55,7 +55,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/icon@0.0.9": {
+    "station.catalog/icon@0.0.10": {
         "files": [
             {
                 "name": "Icon.tsx",
@@ -98,6 +98,11 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/BubbleSvg.tsx",
+                "test": false,
+                "name": "BubbleSvg.tsx"
+            },
+            {
                 "name": "ChannelSvg.tsx",
                 "relativePath": "src/components/Icon/svg/ChannelSvg.tsx",
                 "test": false
@@ -111,6 +116,11 @@
                 "name": "CheckmarkSvg.tsx",
                 "relativePath": "src/components/Icon/svg/CheckmarkSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ChevronRightSvg.tsx",
+                "test": false,
+                "name": "ChevronRightSvg.tsx"
             },
             {
                 "name": "CodeSvg.tsx",
@@ -146,6 +156,11 @@
                 "name": "EditorSvg.tsx",
                 "relativePath": "src/components/Icon/svg/EditorSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/ExclamationSvg.tsx",
+                "test": false,
+                "name": "ExclamationSvg.tsx"
             },
             {
                 "name": "ExtensionSvg.tsx",
@@ -445,7 +460,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/list-item@0.0.18": {
+    "station.catalog/list-item@0.0.19": {
         "files": [
             {
                 "name": "ListItem.tsx",
@@ -468,7 +483,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/modal@0.0.2": {
+    "station.catalog/modal@0.0.3": {
         "files": [
             {
                 "relativePath": "src/components/Modal/Modal.tsx",
