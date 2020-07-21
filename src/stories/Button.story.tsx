@@ -15,6 +15,11 @@ const appStyles = createUseStyles({
   button:{
     width: 265
   },
+  buttonWrapped: {
+    cursor: 'pointer',
+    display: 'inline-flex',
+    width: 'auto'
+  },
   custom: {
     width: 420,
     justifyContent: 'space-between',
@@ -29,6 +34,18 @@ const appStyles = createUseStyles({
 
 storiesOf('Components|Button', module)
   .addParameters({ options: { selectedPanel: 'storybook/Button' } })
+  .add('Simple (without icon)', () => {
+    const style = appStyles();
+     return (<Button
+      text={text('text', 'Zeplin')}
+      onClick={e => action('onButtonClicked')(e)}
+      variant="secondary"
+      className={style.buttonWrapped}
+    />)
+  },
+  {
+    centered: { disable: true },
+  })
   .add('Application (Team hub)', () => {
     const style = appStyles();
      return (<Button
