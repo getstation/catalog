@@ -16,6 +16,7 @@ import DocSvg from './DocSvg';
 import DownloadSvg from './DownloadSvg';
 import DropdownSvg from './DropdownSvg';
 import EditorSvg from './EditorSvg';
+import ExclamationSvg from './ExclamationSvg';
 import ExtensionSvg from './ExtensionSvg';
 import FileSvg from './FileSvg';
 import FolderSvg from './FolderSvg';
@@ -57,6 +58,7 @@ export enum Icons {
   DOWNLOAD = 'download',
   DROPDOWN = 'dropdown',
   EDITOR = 'editor',
+  EXCLAMATION = 'exclamation',
   EXTENSION = 'extension',
   FILE = 'file',
   FOLDER = 'folder',
@@ -103,6 +105,7 @@ const SvgIcon: SvgComponents = {
   [Icons.DOWNLOAD]: DownloadSvg,
   [Icons.DROPDOWN]: DropdownSvg,
   [Icons.EDITOR]: EditorSvg,
+  [Icons.EXCLAMATION]: ExclamationSvg,
   [Icons.EXTENSION]: ExtensionSvg,
   [Icons.FILE]: FileSvg,
   [Icons.FOLDER]: FolderSvg,
