@@ -468,6 +468,34 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "station.catalog/modal@0.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/Modal/Modal.tsx",
+                "test": false,
+                "name": "Modal.tsx"
+            },
+            {
+                "relativePath": "src/components/Modal/ModalContent.tsx",
+                "test": false,
+                "name": "ModalContent.tsx"
+            },
+            {
+                "relativePath": "src/components/Modal/ModalHead.tsx",
+                "test": false,
+                "name": "ModalHead.tsx"
+            },
+            {
+                "relativePath": "src/components/Modal/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "mainFile": "src/components/Modal/index.ts",
+        "trackDir": "src/components/Modal",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "station.catalog/shortcut@0.0.6": {
         "files": [
             {
