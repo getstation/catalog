@@ -1,11 +1,13 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import classNames from 'classnames';
 import Icon, { Icons } from '../Icon';
 import Colors from "../Colors";
 
 interface ModalHeadProps {
   title: string;
   onClose: () => void;
+  className?: string;
 }
 
 const useStyles = createUseStyles({
@@ -37,7 +39,7 @@ const useStyles = createUseStyles({
 function ModalHead(props: ModalHeadProps) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classNames(classes.root, props.className)}>
       <div className={classes.title}>{props.title}</div>
       <Icon
         className={classes.close}
