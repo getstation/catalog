@@ -5,9 +5,10 @@ import ArrowUpLeftSvg from './ArrowUpLeftSvg';
 import ArrowsUpDownSvg from './ArrowsUpDownSvg';
 import BoardSvg from './BoardSvg';
 import BranchSvg from './BranchSvg';
+import BubbleSvg from './BubbleSvg';
 import ChannelSvg from './ChannelSvg';
-import ChatSvg from './ChatSvg';
 import CheckmarkSvg from './CheckmarkSvg';
+import ChevronRightSvg from './ChevronRightSvg';
 import CodeSvg from './CodeSvg';
 import CogSvg from './CogSvg';
 import CrossSvg from './CrossSvg';
@@ -15,6 +16,7 @@ import DocSvg from './DocSvg';
 import DownloadSvg from './DownloadSvg';
 import DropdownSvg from './DropdownSvg';
 import EditorSvg from './EditorSvg';
+import ExclamationSvg from './ExclamationSvg';
 import ExtensionSvg from './ExtensionSvg';
 import FileSvg from './FileSvg';
 import FolderSvg from './FolderSvg';
@@ -45,9 +47,10 @@ export enum Icons {
   ARROWS_UP_DOWN = 'arrows-up-down',
   BOARD = 'board',
   BRANCH = 'branch',
+  BUBBLE = 'bubble',
   CHANNEL = 'channel',
-  CHAT = 'chat',
   CHECKMARK = 'checkmark',
+  CHEVRON_RIGHT = 'chevron-right',
   CODE = 'code',
   COG = 'cog',
   CROSS = 'cross',
@@ -55,6 +58,7 @@ export enum Icons {
   DOWNLOAD = 'download',
   DROPDOWN = 'dropdown',
   EDITOR = 'editor',
+  EXCLAMATION = 'exclamation',
   EXTENSION = 'extension',
   FILE = 'file',
   FOLDER = 'folder',
@@ -90,9 +94,10 @@ const SvgIcon: SvgComponents = {
   [Icons.ARROWS_UP_DOWN]: ArrowsUpDownSvg,
   [Icons.BOARD]: BoardSvg,
   [Icons.BRANCH]: BranchSvg,
+  [Icons.BUBBLE]: BubbleSvg,
   [Icons.CHANNEL]: ChannelSvg,
-  [Icons.CHAT]: ChatSvg,
   [Icons.CHECKMARK]: CheckmarkSvg,
+  [Icons.CHEVRON_RIGHT]: ChevronRightSvg,
   [Icons.CODE]: CodeSvg,
   [Icons.COG]: CogSvg,
   [Icons.CROSS]: CrossSvg,
@@ -100,6 +105,7 @@ const SvgIcon: SvgComponents = {
   [Icons.DOWNLOAD]: DownloadSvg,
   [Icons.DROPDOWN]: DropdownSvg,
   [Icons.EDITOR]: EditorSvg,
+  [Icons.EXCLAMATION]: ExclamationSvg,
   [Icons.EXTENSION]: ExtensionSvg,
   [Icons.FILE]: FileSvg,
   [Icons.FOLDER]: FolderSvg,
