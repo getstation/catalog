@@ -40,9 +40,9 @@ const useStyles = createUseStyles({
     border: (props: ButtonProps) => props.variant === 'primary' ? 'none' : `solid 1px ${Colors.lightSecondaryBorderColor}`,
     padding: (props: ButtonProps) => props.icon ? 0 : '0 11px',
     backgroundColor: (props: ButtonProps) => Colors[props.selected ? 'lightSecondaryHoverBackgroundColor' : 'lightPrimaryBackgroundColor'],
-    height: (props: ButtonProps) => props.subtext ? 60 : 29,
+    height: (props: ButtonProps) => props.subtext ? 60 : 24,
     width: '100%',
-    borderRadius: 30,
+    borderRadius: 3,
     boxSizing: 'border-box',
     outline: 'none',
     '&:hover, &:focus, &:active': {
@@ -56,7 +56,7 @@ const useStyles = createUseStyles({
     }
   },
   image: {
-    height: (props: ButtonProps) => props.subtext ? 60 : 29,
+    height: (props: ButtonProps) => props.subtext ? 60 : 24,
     width: (props: ButtonProps) => props.subtext ? 60 : 44,
     '&>img': {
       padding: (props: ButtonProps) => props.subtext ? '15px 10px 15px 20px' : '3px 8px 3px 12px',
