@@ -483,7 +483,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/modal@0.0.3": {
+    "station.catalog/modal@0.0.4": {
         "files": [
             {
                 "relativePath": "src/components/Modal/Modal.tsx",

@@ -46,7 +46,7 @@ function Modal(props: ModalProps) {
         props.onClose();
       });
     }
-  });
+  }, [props.open]);
 
   if (!props.open) return null;
 
