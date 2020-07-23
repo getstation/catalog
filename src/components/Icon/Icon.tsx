@@ -8,7 +8,7 @@ type IconProps = {
 	size?: number | string;
 	color?: string;
 	className?: string;
-	onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+	onClick?: (icon: Icons, e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
 const useStyles = createUseStyles({
@@ -40,7 +40,7 @@ const Icon = (props: IconProps) => {
 	const Svg = SvgIcon[props.icon];
 
 	return (
-		<div className={classNames(classes.Icon, props.className)} onClick={e => props.onClick && props.onClick(e)}>
+		<div className={classNames(classes.Icon, props.className)} onClick={e => props.onClick && props.onClick(props.icon, e)}>
 			<Svg className={classes.svg} />
 		</div>
 	);
