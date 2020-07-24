@@ -1,0 +1,23 @@
+import React from 'react';
+import classNames from 'classnames';
+import { createUseStyles } from 'react-jss';
+
+type {{ pascalCase name }}Props = {
+  className?: string;
+};
+
+const useStyles = createUseStyles({
+  {{ camelCase name }}: {},
+});
+
+const {{ pascalCase name }} = ({ className }: {{ pascalCase name }}Props) => {
+  const classes = useStyles();
+
+  return (
+    <div className={classNames(classes.{{ camelCase name }}, className)}>
+      {{ pascalCase name }}
+    </div>
+  );
+};
+
+export default {{ pascalCase name }};
