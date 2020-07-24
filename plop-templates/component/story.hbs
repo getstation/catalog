@@ -1,0 +1,9 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import {{ pascalCase name }} from '@components/{{ pascalCase name }}';
+
+storiesOf('Components|{{ pascalCase name }}', module)
+  .addParameters({ options: { selectedPanel: 'storybook/{{ pascalCase name }}' } })
+    .add('{{ pascalCase name }}', () => (
+      <{{ pascalCase name }} />
+    ));
