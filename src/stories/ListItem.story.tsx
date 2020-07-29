@@ -99,6 +99,24 @@ storiesOf('Components|ListItem', module)
     },
   )
   .add(
+    'from power-ups (quick switch)',
+    () => (
+      <ListItem
+        favIconUrl={text('favIconUrl', 'https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png')}
+        appIconUrl={text('appIconUrl', 'https://github.githubassets.com/favicons/favicon-dark.png')}
+        title={text('title', 'Julien B')}
+        subtitle={text('appName', 'Slack DM')}
+        account={'Station'}
+        type={select('type', types, types.tab)}
+        url={'https://google.com/'}
+        onClick={e => action('onListItemClicked')(e)}
+      />
+    ),
+    {
+      centered: { disable: true },
+    },
+  )
+  .add(
     'with children (teamhub)',
     () => (
       <ListItem

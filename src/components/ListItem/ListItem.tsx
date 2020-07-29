@@ -12,9 +12,11 @@ type ListItemProps = {
   onClick: (e: string) => void;
   className?: string;
   favIconUrl?: string | null;
+  appIconUrl?: string | null;
   title: string;
   url: string;
   subtitle: string;
+  account?: string;
   type?: string;
   isRecent?: boolean;
   isTeamhub?: boolean;
@@ -72,12 +74,20 @@ const useStyles = (isRecent: boolean) =>
       flexGrow: 1,
       overflow: 'hidden'
     },
-    appIcon: {
+    favIcon: {
       width: isRecent ? 42 : 72,
       minWidth: isRecent ? 42 : 72,
       marginRight: isRecent ? 5 : 'inherit',
       padding: isRecent ? [5, 5, 20, 20] : [17, 20, 16, 32],
       boxSizing: 'border-box'
+    },
+    appIcon: {
+      width: 12,
+      height: 12,
+      position: 'absolute',
+      bottom: 15,
+      right: 15,
+      borderRadius: 10,
     },
     title: {
       display: 'flex',
@@ -143,15 +153,21 @@ const useStyles = (isRecent: boolean) =>
     }
   });
 const ListItem = (props: ListItemProps) => {
-  const { children, url, favIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, onClick, isSelected } = props;
+  const { children, url, favIconUrl, appIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, account, onClick, isSelected } = props;
   const classes = useStyles(isRecent)();
   const className = classNames(classes.ListItem, { selected: isSelected });
 
   return (
     <li title={url} className={className} onClick={() => onClick(url)} tabIndex={-1}>
-      <Image image={favIconUrl || fallback} className={classes.appIcon} />
+      <div style={{position: 'relative'}}>
+        <Image image={favIconUrl || fallback} className={classes.favIcon} />
+        {appIconUrl && <Image image={appIconUrl} className={classes.appIcon} />}
+      </div>
       <div className={classes.item}>
-        <span className={classes.title}>{title}{isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}</span>
+        <span className={classes.title}>
+          {title}{account && <b className={classes.appName}>&nbsp;- {account}</b>}
+          {isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}
+        </span>
         <span className={classes.appName}>
           {subtitle}
           {isRecent && type === 'TAB' && (
