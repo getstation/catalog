@@ -98,5 +98,8 @@
     "gen:icons": "ts-node --transpile-only scripts/generate-icons.ts",
     "gen:images": "node --experimental-modules scripts/genIconsModules.mjs",
     "chromatic": "chromatic --project-token=q65anlqcdyq"
+  },
+  "volta": {
+    "node": "13.11.0"
   }
 }
