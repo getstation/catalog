@@ -1,6 +1,6 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-import {createUseStyles} from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import Colors from '../Colors';
 import {TooltipStyles, TooltipPositions} from './index';
 
@@ -74,7 +74,7 @@ const useStyles = createUseStyles({
     ],
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightSecondaryHoverBackgroundColor,
+    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightSecondaryBackgroundColor,
     borderRadius: (styles: TooltipStyles) => styles?.container?.radius || 3,
     opacity: 0,
     transitionDuration: (styles: TooltipStyles) => styles?.exitDuration || 100,
