@@ -7,13 +7,22 @@ Catalog's components are available on [bit.dev](https://bit.dev/station/catalog)
 yarn add @bit/station.catalog.colors
 ```
 
-#### Requirements
+## Requirements
+#### Toolchain
 - `nvm` (`wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash` to install)
 - `npm` >= 6.13.7
 - `node` >= 13.11.0
 - `yarn` ~= latest
 
-use `nvm i` to use the correct version of `node` and `npm`
+You can use `nvm i` to use the correct version of `node` and `npm` (or Volta as well).
+
+#### Bit CLI
+Install `bit` CLI globally (for publishing and such): `brew install bit` or `yarn global add bit-bin`
+
+⚠️ Make sure you're logged in to use `bit` ! Do so with: `bit login`
+
+Request an invit if you don't have any yet.
+
 ## Setup
 As usual:
 ```shell script
