@@ -529,7 +529,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/tooltip@0.0.4": {
+    "station.catalog/tooltip@0.0.5": {
         "files": [
             {
                 "name": "Tooltip.tsx",
