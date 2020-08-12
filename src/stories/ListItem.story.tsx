@@ -68,6 +68,23 @@ storiesOf('Components|ListItem', module)
     },
   )
   .add(
+    'Result - double image (Quick Switch)',
+    () => (
+      <ListItem
+        favIconUrl={text('favIconUrl', 'https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png')}
+        appIconUrl={text('appIconUrl', 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/306_Slack_logo-512.png')}
+        title={text('title', 'pages/recents/results - Station 2.0 - Zeplin')}
+        subtitle={text('subtitle', 'Zeplin')}
+        type={select('type', types, types.tab)}
+        url={'app.zeplin.io'}
+        onClick={e => action('onListItemClicked')(e)}
+      />
+    ),
+    {
+      centered: { disable: true },
+    },
+  )
+  .add(
     'Alternative',
     () => (
       <ListItem

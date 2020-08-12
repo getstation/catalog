@@ -85,9 +85,13 @@ const useStyles = (isRecent: boolean) =>
       width: 12,
       height: 12,
       position: 'absolute',
-      bottom: 15,
-      right: 15,
+      bottom: 12,
+      right: 13,
       borderRadius: 10,
+      boxSizing: 'border-box',
+      border: [1, 'solid', 'white'],
+      display: 'flex',
+      backgroundColor: 'white',
     },
     title: {
       display: 'flex',
@@ -120,6 +124,13 @@ const useStyles = (isRecent: boolean) =>
         textDecoration: 'none',
         outline: 'none'
       }
+    },
+    appLabel: {
+      color: Colors.lightSecondaryTextColor,
+      fontWeight: 600,
+      fontStyle: 'normal',
+      letterSpacing: 0,
+      whiteSpace: 'nowrap',
     },
     icon: {
       display: 'none',
@@ -165,7 +176,7 @@ const ListItem = (props: ListItemProps) => {
       </div>
       <div className={classes.item}>
         <span className={classes.title}>
-          {title}{account && <b className={classes.appName}>&nbsp;- {account}</b>}
+          <span>{title}</span>{account && <span className={classes.appLabel}>&nbsp;- {account}</span>}
           {isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}
         </span>
         <span className={classes.appName}>
