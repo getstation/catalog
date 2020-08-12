@@ -460,7 +460,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/list-item@0.0.21": {
+    "station.catalog/list-item@0.0.22": {
         "files": [
             {
                 "name": "ListItem.tsx",
