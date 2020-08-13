@@ -108,7 +108,7 @@ const useStyles = (isRecent: boolean) =>
     appName: {
       color: Colors.lightSecondaryTextColor,
       fontSize: isRecent ? 10 : 11,
-      fontWeight: 600,
+      fontWeight: 500,
       fontStyle: 'normal',
       letterSpacing: 0,
       textOverflow: 'ellipsis',
@@ -127,7 +127,7 @@ const useStyles = (isRecent: boolean) =>
     },
     appLabel: {
       color: Colors.lightSecondaryTextColor,
-      fontWeight: 600,
+      fontWeight: 500,
       fontStyle: 'normal',
       letterSpacing: 0,
       whiteSpace: 'nowrap',
