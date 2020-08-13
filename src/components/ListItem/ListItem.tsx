@@ -9,7 +9,7 @@ import fallback from './favicon-placeholder.svg';
 
 type ListItemProps = {
   children?: ReactChild | ReactChild[];
-  onClick: (e: string) => void;
+  onClick: (url: string, e: React.MouseEvent<HTMLLIElement>) => void;
   className?: string;
   favIconUrl?: string | null;
   appIconUrl?: string | null;
@@ -169,7 +169,7 @@ const ListItem = (props: ListItemProps) => {
   const className = classNames(classes.ListItem, { selected: isSelected });
 
   return (
-    <li title={url} className={className} onClick={() => onClick(url)} tabIndex={-1}>
+    <li title={url} className={className} onClick={(e) => onClick(url, e)} tabIndex={-1}>
       <div style={{position: 'relative'}}>
         <Image image={favIconUrl || fallback} className={classes.favIcon} />
         {appIconUrl && <Image image={appIconUrl} className={classes.appIcon} />}
