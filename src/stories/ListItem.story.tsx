@@ -116,11 +116,11 @@ storiesOf('Components|ListItem', module)
     },
   )
   .add(
-    'from power-ups (quick switch)',
+    'result from power-ups (quick switch)',
     () => (
       <ListItem
         favIconUrl={text('favIconUrl', 'https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png')}
-        appIconUrl={text('appIconUrl', 'https://github.githubassets.com/favicons/favicon-dark.png')}
+        appIconUrl={text('appIconUrl', 'https://assets.getstation.com/apps-logos/slack.png')}
         title={text('title', 'Julien B')}
         subtitle={text('appName', 'Slack DM')}
         account={'Station'}

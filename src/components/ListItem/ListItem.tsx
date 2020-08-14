@@ -75,6 +75,7 @@ const useStyles = (isRecent: boolean) =>
       overflow: 'hidden'
     },
     favIcon: {
+      height: 53,
       width: isRecent ? 42 : 72,
       minWidth: isRecent ? 42 : 72,
       marginRight: isRecent ? 5 : 'inherit',
@@ -82,14 +83,14 @@ const useStyles = (isRecent: boolean) =>
       boxSizing: 'border-box'
     },
     appIcon: {
-      width: 12,
-      height: 12,
+      width: 16,
+      height: 16,
       position: 'absolute',
-      bottom: 12,
-      right: 13,
+      bottom: 8,
+      right: 12,
       borderRadius: 10,
       boxSizing: 'border-box',
-      border: [1, 'solid', 'white'],
+      border: [2, 'solid', 'white'],
       display: 'flex',
       backgroundColor: 'white',
     },
@@ -106,6 +107,8 @@ const useStyles = (isRecent: boolean) =>
       maxWidth: '95%'
     },
     appName: {
+      display: 'flex',
+      alignItems: 'center',
       color: Colors.lightSecondaryTextColor,
       fontSize: isRecent ? 10 : 11,
       fontWeight: 500,
@@ -176,7 +179,7 @@ const ListItem = (props: ListItemProps) => {
       </div>
       <div className={classes.item}>
         <span className={classes.title}>
-          <span>{title}</span>{account && <span className={classes.appLabel}>&nbsp;- {account}</span>}
+          {title}{account && <b className={classes.appName}>&nbsp;- {account}</b>}
           {isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}
         </span>
         <span className={classes.appName}>
