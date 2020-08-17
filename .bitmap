@@ -511,6 +511,24 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "station.catalog/radio@0.0.3": {
+        "files": [
+            {
+                "relativePath": "src/components/Radio/Radio.tsx",
+                "test": false,
+                "name": "Radio.tsx"
+            },
+            {
+                "relativePath": "src/components/Radio/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "mainFile": "src/components/Radio/index.ts",
+        "trackDir": "src/components/Radio",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "station.catalog/shortcut@0.0.6": {
         "files": [
             {
