@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/dropdown-menu@0.0.11": {
+    "station.catalog/dropdown-menu@0.0.12": {
         "files": [
             {
                 "name": "DropdownMenu.tsx",
