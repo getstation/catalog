@@ -169,7 +169,7 @@ const useStyles = (isRecent: boolean) =>
 const ListItem = (props: ListItemProps) => {
   const { children, url, favIconUrl, appIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, account, onClick, isSelected } = props;
   const classes = useStyles(isRecent)();
-  const className = classNames(classes.ListItem, { selected: isSelected });
+  const className = classNames(classes.ListItem, { selected: isSelected }, props.className);
 
   return (
     <li title={url} className={className} onClick={(e) => onClick(url, e)} tabIndex={-1}>
