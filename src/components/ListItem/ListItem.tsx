@@ -11,6 +11,8 @@ type ListItemProps = {
   children?: ReactChild | ReactChild[];
   onClick: (url: string, e: React.MouseEvent<HTMLLIElement>) => void;
   className?: string;
+  favIconClassName?: string;
+  appIconClassName?: string;
   favIconUrl?: string | null;
   appIconUrl?: string | null;
   title: string;
@@ -174,8 +176,8 @@ const ListItem = (props: ListItemProps) => {
   return (
     <li title={url} className={className} onClick={(e) => onClick(url, e)} tabIndex={-1}>
       <div style={{position: 'relative'}}>
-        <Image image={favIconUrl || fallback} className={classes.favIcon} />
-        {appIconUrl && <Image image={appIconUrl} className={classes.appIcon} />}
+        <Image image={favIconUrl || fallback} className={classNames(classes.favIcon, props.favIconClassName)} />
+        {appIconUrl && <Image image={appIconUrl} className={classNames(classes.appIcon, props.appIconClassName)} />}
       </div>
       <div className={classes.item}>
         <span className={classes.title}>
