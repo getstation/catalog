@@ -119,7 +119,7 @@ const useStyles = (isRecent: boolean) =>
       textOverflow: 'ellipsis',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
-      maxWidth: '70%',
+      maxWidth: '100%',
       '&>a': {
         fontSize: 10,
         fontWeight: 'normal',

@@ -123,7 +123,7 @@ storiesOf('Components|ListItem', module)
         appIconUrl={text('appIconUrl', 'https://assets.getstation.com/apps-logos/slack.png')}
         title={text('title', 'Julien B')}
         subtitle={text('appName', 'Slack DM')}
-        account={'Station'}
+        account={text('account', 'Station')}
         type={select('type', types, types.tab)}
         url={'https://google.com/'}
         onClick={e => action('onListItemClicked')(e)}
