@@ -12,6 +12,7 @@ type TooltipProps = {
   className?: string;
   boxClassName?: string;
   textClassName?: string;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
 const positions = (size: number) => ({
@@ -89,10 +90,10 @@ const useStyles = createUseStyles({
   position: (styles: TooltipStyles) => (positions(styles?.space || 8)[styles?.position || TooltipPositions.BOTTOM])
 });
 
-const Tooltip = ({children, text, styles, className, boxClassName, textClassName}: TooltipProps) => {
+const Tooltip = ({children, text, styles, className, boxClassName, textClassName, onClick}: TooltipProps) => {
   const classes = useStyles(styles);
   return (
-    <div className={classNames(classes.root, className)}>
+    <div className={classNames(classes.root, className)} onClick={onClick}>
       {children}
       <div className={classNames(classes.container, classes.position, boxClassName)}>
         <p className={classNames(classes.text, textClassName)}>
