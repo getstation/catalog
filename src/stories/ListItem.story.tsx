@@ -1,7 +1,7 @@
 import React from 'react';
 import {createUseStyles} from "react-jss";
 import { storiesOf } from '@storybook/react';
-import {text, select, boolean} from '@storybook/addon-knobs';
+import {text, select, boolean, number} from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import ListItem from '@components/ListItem';
@@ -17,7 +17,7 @@ const types = {
 const useStyle = createUseStyles({
   icon: {
     '&:hover': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor,
+      backgroundColor: Colors.lightSecondaryHoverBackgroundColor,
     },
     alignSelf: 'center',
     height: 12,
@@ -28,6 +28,15 @@ const useStyle = createUseStyles({
       display: 'block',
       width: 12,
       height: 12,
+    }
+  },
+  copy: {
+    extend: 'icon',
+    position: 'absolute',
+    right: 30,
+    display: 'none',
+    'li:hover &': {
+      display: 'block',
     }
   }
 })
@@ -153,6 +162,27 @@ storiesOf('Components|ListItem', module)
         </Tooltip>
         <Tooltip text={'Delete resource'} styles={{space: -12, margin: '0 16px 0 0', text: {size: 10}}}>
           <Icon icon={Icons.TRASH} color={Colors.lightPrimaryTextColor} className={useStyle().icon} onClick={action('Delete resource clicked')}/>
+        </Tooltip>
+      </ListItem>
+    ),
+    {
+      centered: { disable: true },
+    },
+  )
+  .add(
+    'with children (teamhub)',
+    () => (
+      <ListItem
+        favIconUrl={text('favIconUrl', 'https://zeplin.io/img/favicon/228x228.png')}
+        title={text('title', 'Slack URLs Integrations')}
+        subtitle={text('appName', 'Notion')}
+        isTeamhub={boolean('isTeamhub', true)}
+        type={select('type', types, types.tab)}
+        url={'https://google.com/'}
+        onClick={e => action('onListItemClicked')(e)}
+      >
+        <Tooltip text={'Copy link'} className={useStyle().copy} styles={{space: number('tooltip space', 12), text: {size: 10}}}>
+          <Icon icon={Icons.LINK} color={Colors.lightPrimaryTextColor} onClick={action('Copy link clicked')}/>
         </Tooltip>
       </ListItem>
     ),

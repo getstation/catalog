@@ -18,7 +18,7 @@ const choices: Choice[] = [
 storiesOf('Components|Radio', module)
   .addParameters({ options: { selectedPanel: 'storybook/Radio' } })
   .add('Radio', () => {
-    const [selected, setSelected] = React.useState(choices[0]);
+    const [selected, setSelected] = React.useState<Choice>(choices[0]);
     return (
       <Radio name={'newTab'} choices={choices} selected={selected} onSelect={choice => setSelected(choice)}/>
     );

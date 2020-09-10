@@ -536,7 +536,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/radio@0.0.3": {
+    "station.catalog/radio@0.0.5": {
         "files": [
             {
                 "relativePath": "src/components/Radio/Radio.tsx",

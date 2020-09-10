@@ -8,8 +8,8 @@ export type RadioProps = {
   choiceClassName?: string;
   name: string;
 	choices?: Choice[];
-	selected?: string;
-	onSelect: (choice: string, event: React.MouseEvent<HTMLInputElement>) => void;
+	selected?: Choice;
+	onSelect: (choice: Choice, event: React.MouseEvent<HTMLDivElement>) => void;
 };
 
 export type Choice = {
@@ -38,12 +38,10 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
   },
-  input: {
-    visibility: 'hidden',
-    margin: [10, 14, 10, 0],
+  box: {
     '&:after': {
-      top: -15,
-      left: 1,
+      top: 1.5,
+      left: -12.5,
       width: 12,
       height: 12,
       borderRadius: 12,
@@ -56,8 +54,8 @@ const useStyles = createUseStyles({
       boxSizing: 'border-box',
     },
     '&:before': {
-      top: -2,
-      left: 3,
+      top: -0.5,
+      left: 10.5,
       width: 8,
       height: 8,
       borderRadius: 8,
@@ -67,12 +65,18 @@ const useStyles = createUseStyles({
       display: 'inline-block',
       visibility: 'visible',
     },
-    '&:checked:after': {
-      borderColor: Colors.lightPrimaryColor,
+    '&[data-checked="true"]': {
+      '&:after': {
+        borderColor: Colors.lightPrimaryColor,
+      },
+      '&:before': {
+        zIndex: 1,
+      },
     },
-    '&:checked:before': {
-      zIndex: 1,
-    }
+  },
+  input: {
+    visibility: 'hidden',
+    margin: [10, 0],
   },
   label: {
     fontSize: 13,
@@ -88,14 +92,16 @@ const Radio = ({ name, selected, choices, onSelect, className, choiceClassName }
     <div className={classNames(classes.root, className)}>
       {choices?.map(choice => (
         <div className={classNames(classes.choice, choiceClassName)} key={choice.id}>
-          <input type="radio"
+          <div className={classes.box} onClick={e => onSelect(choice, e)} data-checked={choice.id === selected?.id}>
+            <input type="radio"
                  id={choice.id}
                  className={classes.input}
                  name={name}
                  value={choice.value}
-                 checked={choice.id === selected}
-                 onClick={e => onSelect(choice.id, e)}
-          />
+                 checked={choice.id === selected?.id}
+                 readOnly
+            />
+          </div>
           <label htmlFor={choice.id} className={classes.label}>{choice.text}</label>
         </div>
       ))}
