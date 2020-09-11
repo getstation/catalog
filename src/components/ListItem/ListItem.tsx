@@ -56,8 +56,6 @@ const useStyles = (isRecent: boolean) =>
         },
         '&>$icon': {
           visibility: 'inherit',
-          display: 'flex',
-          alignItems: 'center'
         },
         '&>$arrow': {
           visibility: 'hidden',
@@ -110,7 +108,6 @@ const useStyles = (isRecent: boolean) =>
     },
     appName: {
       display: 'flex',
-      alignItems: 'center',
       color: Colors.lightSecondaryTextColor,
       fontSize: isRecent ? 10 : 11,
       fontWeight: 500,
@@ -120,6 +117,8 @@ const useStyles = (isRecent: boolean) =>
       overflow: 'hidden',
       whiteSpace: 'nowrap',
       maxWidth: '100%',
+      marginLeft: 6,
+      marginTop: 1,
       '&>a': {
         fontSize: 10,
         fontWeight: 'normal',
@@ -138,10 +137,16 @@ const useStyles = (isRecent: boolean) =>
       whiteSpace: 'nowrap',
     },
     icon: {
-      display: 'none',
       visibility: 'hidden',
+      display: 'flex',
+      alignItems: 'center',
       marginRight: isRecent ? 20 : 30,
       marginLeft: 10
+    },
+    open: {
+      color: Colors.lightPrimaryColor,
+      fontSize: 12,
+      marginLeft: 10,
     },
     arrow: {
       display: 'inherit',
@@ -181,8 +186,9 @@ const ListItem = (props: ListItemProps) => {
       </div>
       <div className={classes.item}>
         <span className={classes.title}>
-          {title}{account && <b className={classes.appName}>&nbsp;- {account}</b>}
+          {title}{account && <b className={classes.appName}>- {account}</b>}
           {isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}
+          {!isTeamhub && !isRecent && type === 'TAB' && (<span className={classes.open}>{`- open`}</span>)}
         </span>
         <span className={classes.appName}>
           {subtitle}
@@ -193,15 +199,10 @@ const ListItem = (props: ListItemProps) => {
           )}
         </span>
       </div>
+      {children}
       <div className={classes.icon}>
         <Icon icon={Icons.RETURN_KEY} color={Colors.lightSecondaryTextColor} className={classes.returnKey} />
       </div>
-      {children}
-      {!isTeamhub && !isRecent && type === 'TAB' && (
-        <div className={classes.arrow}>
-          <Icon icon={Icons.ARROW_UP_LEFT} className={classes.arrowIcon} />
-        </div>
-      )}
     </li>
   );
 };
