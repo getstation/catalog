@@ -9,12 +9,16 @@ import fallback from './favicon-placeholder.svg';
 
 type ListItemProps = {
   children?: ReactChild | ReactChild[];
-  onClick: (e: string) => void;
+  onClick: (url: string, e: React.MouseEvent<HTMLLIElement>) => void;
   className?: string;
+  favIconClassName?: string;
+  appIconClassName?: string;
   favIconUrl?: string | null;
+  appIconUrl?: string | null;
   title: string;
   url: string;
   subtitle: string;
+  account?: string;
   type?: string;
   isRecent?: boolean;
   isTeamhub?: boolean;
@@ -52,8 +56,6 @@ const useStyles = (isRecent: boolean) =>
         },
         '&>$icon': {
           visibility: 'inherit',
-          display: 'flex',
-          alignItems: 'center'
         },
         '&>$arrow': {
           visibility: 'hidden',
@@ -72,12 +74,25 @@ const useStyles = (isRecent: boolean) =>
       flexGrow: 1,
       overflow: 'hidden'
     },
-    appIcon: {
+    favIcon: {
+      height: 53,
       width: isRecent ? 42 : 72,
       minWidth: isRecent ? 42 : 72,
       marginRight: isRecent ? 5 : 'inherit',
       padding: isRecent ? [5, 5, 20, 20] : [17, 20, 16, 32],
       boxSizing: 'border-box'
+    },
+    appIcon: {
+      width: 16,
+      height: 16,
+      position: 'absolute',
+      bottom: 8,
+      right: 12,
+      borderRadius: 10,
+      boxSizing: 'border-box',
+      border: [2, 'solid', 'white'],
+      display: 'flex',
+      backgroundColor: 'white',
     },
     title: {
       display: 'flex',
@@ -92,15 +107,18 @@ const useStyles = (isRecent: boolean) =>
       maxWidth: '95%'
     },
     appName: {
+      display: 'flex',
       color: Colors.lightSecondaryTextColor,
       fontSize: isRecent ? 10 : 11,
-      fontWeight: 600,
+      fontWeight: 500,
       fontStyle: 'normal',
       letterSpacing: 0,
       textOverflow: 'ellipsis',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
-      maxWidth: '70%',
+      maxWidth: '100%',
+      marginLeft: 6,
+      marginTop: 1,
       '&>a': {
         fontSize: 10,
         fontWeight: 'normal',
@@ -111,11 +129,24 @@ const useStyles = (isRecent: boolean) =>
         outline: 'none'
       }
     },
+    appLabel: {
+      color: Colors.lightSecondaryTextColor,
+      fontWeight: 500,
+      fontStyle: 'normal',
+      letterSpacing: 0,
+      whiteSpace: 'nowrap',
+    },
     icon: {
-      display: 'none',
       visibility: 'hidden',
-      marginRight: isRecent ? 20 : 30,
+      display: 'flex',
+      alignItems: 'center',
+      marginRight: isRecent ? 20 : 32,
       marginLeft: 10
+    },
+    open: {
+      color: Colors.lightPrimaryColor,
+      fontSize: 12,
+      marginLeft: 10,
     },
     arrow: {
       display: 'inherit',
@@ -143,15 +174,22 @@ const useStyles = (isRecent: boolean) =>
     }
   });
 const ListItem = (props: ListItemProps) => {
-  const { children, url, favIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, onClick, isSelected } = props;
+  const { children, url, favIconUrl, appIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, account, onClick, isSelected } = props;
   const classes = useStyles(isRecent)();
-  const className = classNames(classes.ListItem, { selected: isSelected });
+  const className = classNames(classes.ListItem, { selected: isSelected }, props.className);
 
   return (
-    <li title={url} className={className} onClick={() => onClick(url)} tabIndex={-1}>
-      <Image image={favIconUrl || fallback} className={classes.appIcon} />
+    <li title={url} className={className} onClick={(e) => onClick(url, e)} tabIndex={-1}>
+      <div style={{position: 'relative'}}>
+        <Image image={favIconUrl || fallback} className={classNames(classes.favIcon, props.favIconClassName)} />
+        {appIconUrl && <Image image={appIconUrl} className={classNames(classes.appIcon, props.appIconClassName)} />}
+      </div>
       <div className={classes.item}>
-        <span className={classes.title}>{title}{isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}</span>
+        <span className={classes.title}>
+          {title}{account && <b className={classes.appName}>- {account}</b>}
+          {isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}
+          {!isTeamhub && !isRecent && type === 'TAB' && (<span className={classes.open}>{`- open`}</span>)}
+        </span>
         <span className={classes.appName}>
           {subtitle}
           {isRecent && type === 'TAB' && (
@@ -161,15 +199,10 @@ const ListItem = (props: ListItemProps) => {
           )}
         </span>
       </div>
+      {children}
       <div className={classes.icon}>
         <Icon icon={Icons.RETURN_KEY} color={Colors.lightSecondaryTextColor} className={classes.returnKey} />
       </div>
-      {children}
-      {!isTeamhub && !isRecent && type === 'TAB' && (
-        <div className={classes.arrow}>
-          <Icon icon={Icons.ARROW_UP_LEFT} className={classes.arrowIcon} />
-        </div>
-      )}
     </li>
   );
 };
