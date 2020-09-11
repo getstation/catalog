@@ -1,6 +1,6 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-import {createUseStyles} from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import Colors from '../Colors';
 import {TooltipStyles, TooltipPositions} from './index';
 
@@ -12,6 +12,7 @@ type TooltipProps = {
   className?: string;
   boxClassName?: string;
   textClassName?: string;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
 const positions = (size: number) => ({
@@ -74,25 +75,27 @@ const useStyles = createUseStyles({
     ],
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightTertiaryBackgroundColor,
+    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightSecondaryBackgroundColor,
+    border: ['solid', 0.5, Colors.lightSecondaryHoverBackgroundColor],
     borderRadius: (styles: TooltipStyles) => styles?.container?.radius || 3,
     opacity: 0,
     transitionDuration: (styles: TooltipStyles) => styles?.exitDuration || 100,
     transitionDelay: 0,
     transitionTimingFunction: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
-    padding: (styles: TooltipStyles) => styles?.container?.padding || '3px 4px'
+    padding: (styles: TooltipStyles) => styles?.container?.padding || '3px 4px',
+    boxShadow: '0 2px 4px 1px rgba(60, 80, 93, 0.08)',
   },
   text: {
     color: (styles: TooltipStyles) => styles?.text?.color || Colors.lightPrimaryTextColor,
-    fontSize: (styles: TooltipStyles) => styles?.text?.size || 14,
+    fontSize: (styles: TooltipStyles) => styles?.text?.size || 12,
   },
   position: (styles: TooltipStyles) => (positions(styles?.space || 8)[styles?.position || TooltipPositions.BOTTOM])
 });
 
-const Tooltip = ({children, text, styles, className, boxClassName, textClassName}: TooltipProps) => {
+const Tooltip = ({children, text, styles, className, boxClassName, textClassName, onClick}: TooltipProps) => {
   const classes = useStyles(styles);
   return (
-    <div className={classNames(classes.root, className)}>
+    <div className={classNames(classes.root, className)} onClick={onClick}>
       {children}
       <div className={classNames(classes.container, classes.position, boxClassName)}>
         <p className={classNames(classes.text, textClassName)}>

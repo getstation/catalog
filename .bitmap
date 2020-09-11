@@ -522,17 +522,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/tooltip@0.0.3": {
+    "station.catalog/tooltip@0.0.7": {
         "files": [
             {
+                "name": "Tooltip.tsx",
                 "relativePath": "src/components/Tooltip/Tooltip.tsx",
-                "test": false,
-                "name": "Tooltip.tsx"
+                "test": false
             },
             {
+                "name": "index.ts",
                 "relativePath": "src/components/Tooltip/index.ts",
-                "test": false,
-                "name": "index.ts"
+                "test": false
             }
         ],
         "mainFile": "src/components/Tooltip/index.ts",
