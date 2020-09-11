@@ -140,7 +140,7 @@ const useStyles = (isRecent: boolean) =>
       visibility: 'hidden',
       display: 'flex',
       alignItems: 'center',
-      marginRight: isRecent ? 20 : 30,
+      marginRight: isRecent ? 20 : 32,
       marginLeft: 10
     },
     open: {
