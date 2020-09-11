@@ -54,6 +54,9 @@ const useStyles = (isRecent: boolean) =>
         '& $title': {
           maxWidth: '100%'
         },
+        '&>$icon': {
+          visibility: 'inherit'
+        },
         '&>$arrow': {
           visibility: 'hidden',
           display: 'none'
@@ -147,6 +150,7 @@ const useStyles = (isRecent: boolean) =>
     },
     icon: {
       display: 'flex',
+      visibility: 'hidden',
       alignItems: 'center',
       marginRight: isRecent ? 20 : 32,
       marginLeft: 10
