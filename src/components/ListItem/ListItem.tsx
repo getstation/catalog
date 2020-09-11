@@ -54,9 +54,6 @@ const useStyles = (isRecent: boolean) =>
         '& $title': {
           maxWidth: '100%'
         },
-        '&>$icon': {
-          visibility: 'inherit',
-        },
         '&>$arrow': {
           visibility: 'hidden',
           display: 'none'
@@ -117,8 +114,6 @@ const useStyles = (isRecent: boolean) =>
       overflow: 'hidden',
       whiteSpace: 'nowrap',
       maxWidth: '100%',
-      marginLeft: 6,
-      marginTop: 1,
       '&>a': {
         fontSize: 10,
         fontWeight: 'normal',
@@ -129,6 +124,20 @@ const useStyles = (isRecent: boolean) =>
         outline: 'none'
       }
     },
+    account: {
+      display: 'flex',
+      marginLeft: 6,
+      marginTop: 1,
+      color: Colors.lightSecondaryTextColor,
+      fontSize: isRecent ? 10 : 11,
+      fontWeight: 500,
+      fontStyle: 'normal',
+      letterSpacing: 0,
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      maxWidth: '100%',
+    },
     appLabel: {
       color: Colors.lightSecondaryTextColor,
       fontWeight: 500,
@@ -137,7 +146,6 @@ const useStyles = (isRecent: boolean) =>
       whiteSpace: 'nowrap',
     },
     icon: {
-      visibility: 'hidden',
       display: 'flex',
       alignItems: 'center',
       marginRight: isRecent ? 20 : 32,
@@ -186,9 +194,9 @@ const ListItem = (props: ListItemProps) => {
       </div>
       <div className={classes.item}>
         <span className={classes.title}>
-          {title}{account && <b className={classes.appName}>- {account}</b>}
+          {title}{account && <b className={classes.account}>- {account}</b>}
           {isTeamhub && type === 'TAB' && <Icon icon={Icons.ARROW_UP_LEFT} className={classes.tab}/>}
-          {!isTeamhub && !isRecent && type === 'TAB' && (<span className={classes.open}>{`- open`}</span>)}
+          {!isTeamhub && !isRecent && type === 'TAB' && (<span className={classes.open}>- open</span>)}
         </span>
         <span className={classes.appName}>
           {subtitle}
