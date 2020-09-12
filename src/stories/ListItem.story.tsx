@@ -68,6 +68,26 @@ storiesOf('Components|ListItem', module)
     },
   )
   .add(
+    'Result (Quick Switch) with children',
+    () => (
+      <ListItem
+        favIconUrl={text('favIconUrl', 'https://zeplin.io/img/favicon/228x228.png')}
+        title={text('title', 'pages/recents/results - Station 2.0 - Zeplin')}
+        subtitle={text('subtitle', 'Zeplin')}
+        type={select('type', types, types.tab)}
+        url={'app.zeplin.io'}
+        onClick={e => action('onListItemClicked')(e)}
+      >
+        <Tooltip text={'Copy link'} styles={{space: -12, margin: '0 7px 0 0', text: {size: 10}}}>
+          <Icon icon={Icons.LINK} color={Colors.lightPrimaryTextColor} className={useStyle().icon} onClick={action('Copy link clicked')}/>
+        </Tooltip>
+      </ListItem>
+    ),
+    {
+      centered: { disable: true },
+    },
+  )
+  .add(
     'Result - double image (Quick Switch)',
     () => (
       <ListItem
