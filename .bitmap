@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/dropdown-menu@0.0.12": {
+    "station.catalog/dropdown-menu@0.0.13": {
         "files": [
             {
                 "name": "DropdownMenu.tsx",
@@ -55,7 +55,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/icon@0.0.11": {
+    "station.catalog/icon@0.0.12": {
         "files": [
             {
                 "name": "Icon.tsx",
@@ -101,6 +101,16 @@
                 "relativePath": "src/components/Icon/svg/BubbleSvg.tsx",
                 "test": false,
                 "name": "BubbleSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/CalendarSvg.tsx",
+                "test": false,
+                "name": "CalendarSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/CallSvg.tsx",
+                "test": false,
+                "name": "CallSvg.tsx"
             },
             {
                 "name": "ChannelSvg.tsx",
@@ -208,6 +218,11 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/Icon/svg/MailSvg.tsx",
+                "test": false,
+                "name": "MailSvg.tsx"
+            },
+            {
                 "name": "NightSvg.tsx",
                 "relativePath": "src/components/Icon/svg/NightSvg.tsx",
                 "test": false
@@ -271,6 +286,16 @@
                 "name": "TrashSvg.tsx",
                 "relativePath": "src/components/Icon/svg/TrashSvg.tsx",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/Icon/svg/UserSvg.tsx",
+                "test": false,
+                "name": "UserSvg.tsx"
+            },
+            {
+                "relativePath": "src/components/Icon/svg/VideoSvg.tsx",
+                "test": false,
+                "name": "VideoSvg.tsx"
             },
             {
                 "name": "index.ts",
@@ -460,7 +485,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/list-item@0.0.29": {
+    "station.catalog/list-item@0.0.30": {
         "files": [
             {
                 "name": "ListItem.tsx",
@@ -483,7 +508,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/modal@0.0.5": {
+    "station.catalog/modal@0.0.6": {
         "files": [
             {
                 "relativePath": "src/components/Modal/Modal.tsx",
