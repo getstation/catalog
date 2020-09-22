@@ -6,6 +6,8 @@ import ArrowsUpDownSvg from './ArrowsUpDownSvg';
 import BoardSvg from './BoardSvg';
 import BranchSvg from './BranchSvg';
 import BubbleSvg from './BubbleSvg';
+import CalendarSvg from './CalendarSvg';
+import CallSvg from './CallSvg';
 import ChannelSvg from './ChannelSvg';
 import CheckmarkSvg from './CheckmarkSvg';
 import ChevronRightSvg from './ChevronRightSvg';
@@ -26,6 +28,7 @@ import HomeSvg from './HomeSvg';
 import IssueSvg from './IssueSvg';
 import LinkSvg from './LinkSvg';
 import LogoutSvg from './LogoutSvg';
+import MailSvg from './MailSvg';
 import NightSvg from './NightSvg';
 import OptionsSvg from './OptionsSvg';
 import PageSvg from './PageSvg';
@@ -39,6 +42,8 @@ import SlideSvg from './SlideSvg';
 import StationSvg from './StationSvg';
 import ThunderSvg from './ThunderSvg';
 import TrashSvg from './TrashSvg';
+import UserSvg from './UserSvg';
+import VideoSvg from './VideoSvg';
 
 export enum Icons {
   APPS = 'apps',
@@ -48,6 +53,8 @@ export enum Icons {
   BOARD = 'board',
   BRANCH = 'branch',
   BUBBLE = 'bubble',
+  CALENDAR = 'calendar',
+  CALL = 'call',
   CHANNEL = 'channel',
   CHECKMARK = 'checkmark',
   CHEVRON_RIGHT = 'chevron-right',
@@ -68,6 +75,7 @@ export enum Icons {
   ISSUE = 'issue',
   LINK = 'link',
   LOGOUT = 'logout',
+  MAIL = 'mail',
   NIGHT = 'night',
   OPTIONS = 'options',
   PAGE = 'page',
@@ -81,6 +89,8 @@ export enum Icons {
   STATION = 'station',
   THUNDER = 'thunder',
   TRASH = 'trash',
+  USER = 'user',
+  VIDEO = 'video',
 }
 
 type SvgComponents = {
@@ -95,6 +105,8 @@ const SvgIcon: SvgComponents = {
   [Icons.BOARD]: BoardSvg,
   [Icons.BRANCH]: BranchSvg,
   [Icons.BUBBLE]: BubbleSvg,
+  [Icons.CALENDAR]: CalendarSvg,
+  [Icons.CALL]: CallSvg,
   [Icons.CHANNEL]: ChannelSvg,
   [Icons.CHECKMARK]: CheckmarkSvg,
   [Icons.CHEVRON_RIGHT]: ChevronRightSvg,
@@ -115,6 +127,7 @@ const SvgIcon: SvgComponents = {
   [Icons.ISSUE]: IssueSvg,
   [Icons.LINK]: LinkSvg,
   [Icons.LOGOUT]: LogoutSvg,
+  [Icons.MAIL]: MailSvg,
   [Icons.NIGHT]: NightSvg,
   [Icons.OPTIONS]: OptionsSvg,
   [Icons.PAGE]: PageSvg,
@@ -128,6 +141,8 @@ const SvgIcon: SvgComponents = {
   [Icons.STATION]: StationSvg,
   [Icons.THUNDER]: ThunderSvg,
   [Icons.TRASH]: TrashSvg,
+  [Icons.USER]: UserSvg,
+  [Icons.VIDEO]: VideoSvg,
 };
 
 export default SvgIcon;
