@@ -110,7 +110,7 @@ export type DropdownMenuStyles = {
   items?: {
     /**
      * @name color
-     * @default Colors.lightSecondaryBackgroundColor
+     * @default theme.color.backgroundSecondaryDefault
      * @desc background-color of content box
      */
     color?: string;
@@ -134,7 +134,7 @@ export type DropdownMenuStyles = {
   item?: {
     /**
      * @name color
-     * @default Colors.lightPrimaryTextColor
+     * @default theme.color.textPrimaryDefault
      * @desc color of text
      */
     color?: string;

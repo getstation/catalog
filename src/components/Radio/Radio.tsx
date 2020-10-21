@@ -1,15 +1,16 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, useTheme } from 'react-jss';
 import classNames from 'classnames';
-import Colors from './../Colors';
+
+import { StationTheme } from '@src/design-system';
 
 export type RadioProps = {
   className?: string;
   choiceClassName?: string;
   name: string;
 	choices?: Choice[];
-	selected?: Choice;
-	onSelect: (choice: Choice, event: React.MouseEvent<HTMLDivElement>) => void;
+	selected?: string;
+	onSelect: (choice: string, event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
 export type Choice = {
@@ -19,7 +20,7 @@ export type Choice = {
   icon?: string,
 };
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   root: {
     fontFamily: [
       '-apple-system',
@@ -38,52 +39,48 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
   },
-  box: {
+  input: {
+    visibility: 'hidden',
+    margin: [10, 14, 10, 0],
     '&:after': {
-      top: 1.5,
-      left: -12.5,
+      top: -15,
+      left: 1,
       width: 12,
       height: 12,
       borderRadius: 12,
       position: 'relative',
-      backgroundColor: Colors.lightPrimaryBackgroundColor,
+      backgroundColor: theme.color.backgroundPrimaryDefault,
       content: '""',
       display: 'inline-block',
       visibility: 'visible',
-      border: [1, 'solid', Colors.lightSecondaryTextColor],
+      border: [1, 'solid', theme.color.textSecondaryDefault],
       boxSizing: 'border-box',
     },
     '&:before': {
-      top: -0.5,
-      left: 10.5,
+      top: -2,
+      left: 3,
       width: 8,
       height: 8,
       borderRadius: 8,
       position: 'relative',
-      backgroundColor: Colors.lightPrimaryColor,
+      backgroundColor: theme.color.brandPrimaryDefault,
       content: '""',
       display: 'inline-block',
       visibility: 'visible',
     },
-    '&[data-checked="true"]': {
-      '&:after': {
-        borderColor: Colors.lightPrimaryColor,
-      },
-      '&:before': {
-        zIndex: 1,
-      },
+    '&:checked:after': {
+      borderColor: theme.color.brandPrimaryDefault,
     },
-  },
-  input: {
-    visibility: 'hidden',
-    margin: [10, 0],
+    '&:checked:before': {
+      zIndex: 1,
+    }
   },
   label: {
     fontSize: 13,
     fontWeight: 600,
-    color: Colors.lightPrimaryTextColor,
+    color: theme.color.textPrimaryDefault,
   },
-});
+}));
 
 const Radio = ({ name, selected, choices, onSelect, className, choiceClassName }: RadioProps) => {
   const classes = useStyles();
@@ -92,16 +89,14 @@ const Radio = ({ name, selected, choices, onSelect, className, choiceClassName }
     <div className={classNames(classes.root, className)}>
       {choices?.map(choice => (
         <div className={classNames(classes.choice, choiceClassName)} key={choice.id}>
-          <div className={classes.box} onClick={e => onSelect(choice, e)} data-checked={choice.id === selected?.id}>
-            <input type="radio"
+          <input type="radio"
                  id={choice.id}
                  className={classes.input}
                  name={name}
                  value={choice.value}
-                 checked={choice.id === selected?.id}
-                 readOnly
-            />
-          </div>
+                 checked={choice.id === selected}
+                 onClick={e => onSelect(choice.id, e)}
+          />
           <label htmlFor={choice.id} className={classes.label}>{choice.text}</label>
         </div>
       ))}

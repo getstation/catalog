@@ -51,7 +51,7 @@ export type TooltipStyles = {
   container?: {
     /**
      * @name color
-     * @default Colors.lightSecondaryHoverBackgroundColor
+     * @default theme.color.backgroundSecondaryHover
      * @desc background-color of the tooltip box
      */
     color?: string;
@@ -75,7 +75,7 @@ export type TooltipStyles = {
   text?: {
     /**
      * @name color
-     * @default Colors.lightPrimaryTextColor
+     * @default theme.color.textPrimaryDefault
      * @desc color of the tooltip text
      */
     color?: string;

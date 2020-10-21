@@ -2,7 +2,7 @@ import React, {ReactChild} from 'react';
 import classNames from 'classnames';
 import { createUseStyles } from 'react-jss';
 import Image from '../Image';
-import Colors from '../Colors';
+import { StationTheme } from '../../design-system';
 
 type ButtonProps = {
   children?: ButtonSlots | any;
@@ -21,7 +21,7 @@ type ButtonSlots = {
   items?: ReactChild[];
 };
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   button: {
     fontFamily: [
       '-apple-system',
@@ -37,22 +37,22 @@ const useStyles = createUseStyles({
     ],
     display: 'flex',
     alignItems: 'center',
-    border: (props: ButtonProps) => props.variant === 'primary' ? 'none' : `solid 1px ${Colors.lightSecondaryBorderColor}`,
+    border: (props: ButtonProps) => props.variant === 'primary' ? 'none' : `solid 1px ${theme.color.borderTertiaryDefault}`,
     padding: (props: ButtonProps) => props.icon ? 0 : '0 11px',
-    backgroundColor: (props: ButtonProps) => Colors[props.selected ? 'lightSecondaryHoverBackgroundColor' : 'lightPrimaryBackgroundColor'],
+    backgroundColor: (props: ButtonProps) => theme.color[props.selected ? 'backgroundSecondaryHover' : 'backgroundPrimaryDefault'],
     height: (props: ButtonProps) => props.subtext ? 60 : 24,
     width: '100%',
     borderRadius: 3,
     boxSizing: 'border-box',
     outline: 'none',
     '&:hover, &:focus, &:active': {
-      backgroundColor: Colors.lightSecondaryHoverBackgroundColor,
+      backgroundColor: theme.color.backgroundSecondaryHover,
       '& $text': {
-        color: Colors.lightPrimaryTextColor
+        color: theme.color.textPrimaryDefault
       }
     },
     '&:focus:not(:hover)': {
-      filter: 'brightness(0.9)' // TODO specify stytle for pressed state
+      filter: 'brightness(0.9)' // TODO specify style for pressed state
     }
   },
   image: {
@@ -69,16 +69,16 @@ const useStyles = createUseStyles({
     alignItems: 'flex-start'
   },
   text: {
-    color: (props: ButtonProps) => Colors[props.subtext || props.selected ? 'lightPrimaryTextColor' : 'lightSecondaryTextColor'],
+    color: (props: ButtonProps) => theme.color[props.subtext || props.selected ? 'textPrimaryDefault' : 'textSecondaryDefault'],
     fontSize: 14,
     fontWeight: (props: ButtonProps) => props.subtext ? 600 : 500
   },
   subtext: {
-    color: Colors.lightSecondaryTextColor,
+    color: theme.color.textSecondaryDefault,
     fontSize: 12,
     marginTop: 2
   }
-});
+  }));
 
 const Button = ({ children, icon, text, subtext, onClick, className, selected, variant = 'primary' }: ButtonProps) => {
   const classes = useStyles({subtext, selected, variant, icon});

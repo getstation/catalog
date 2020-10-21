@@ -3,8 +3,9 @@ import {storiesOf} from '@storybook/react';
 import Shortcut, {Key} from "@components/Shortcut";
 import {number} from "@storybook/addon-knobs";
 import {createUseStyles} from "react-jss";
+import { StationTheme } from '@src/design-system';
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   shortcut: {
     background: 'rgb(31, 32, 35)',
     padding: 25,
@@ -15,7 +16,7 @@ const useStyles = createUseStyles({
     backgroundColor: 'rgb(80, 80, 84)',
     border: 'none'
   }
-});
+  }));
 
 storiesOf('Components|Shortcut', module)
 	.addParameters({ options: { selectedPanel: 'storybook/Shortcut' } })

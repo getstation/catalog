@@ -3,41 +3,45 @@ import color from 'color';
 import {storiesOf} from '@storybook/react';
 import {number, select, text} from '@storybook/addon-knobs';
 
-import Colors from "@components/Colors";
+
 import Tooltip, {TooltipPositions} from '@components/Tooltip';
 import Icon, {Icons} from "@components/Icon";
 
 import {createUseStyles} from "react-jss";
-
-const useStyle = createUseStyles({
-  icon: {
-    padding: 13,
-    margin: 8,
-    zIndex: 1,
-    backgroundColor: color(Colors.lightPrimaryBackgroundColor)
-      .fade(0.6)
-      .string(),
-    borderRadius: 22,
-    transition: 'background-color 0.2s',
-    '&:hover': {
-      backgroundColor: color(Colors.lightPrimaryBackgroundColor)
-        .fade(0.8)
-        .string(),
-      '&:active': {
-        backgroundColor: color(Colors.lightPrimaryBackgroundColor)
-          .fade(0.9)
-          .string()
-      }
-    }
-  },
-});
+import DesignTokens, { StationTheme } from '@src/design-system';
 
 storiesOf('Components|Tooltip', module)
   .addParameters({options: {selectedPanel: 'storybook/Tooltip'}})
-  .add('Basic', () =>
-    <Tooltip text={text('text', 'Station Hub')} styles={{duration: '0 !important', exitDuration: '0 !important', delay: '0 !important'}}>
-      <Icon icon={Icons.STATION} className={useStyle().icon} size={19}/>
-    </Tooltip>)
+  .add('Basic', () => {
+    const useStyle = createUseStyles({
+      icon: {
+        padding: 13,
+        margin: 8,
+        zIndex: 1,
+        backgroundColor: color(DesignTokens.light.color.backgroundPrimaryDefault)
+          .fade(0.6)
+          .string(),
+        borderRadius: 22,
+        transition: 'background-color 0.2s',
+        '&:hover': {
+          backgroundColor: color(DesignTokens.light.color.backgroundPrimaryDefault)
+            .fade(0.8)
+            .string(),
+          '&:active': {
+            backgroundColor: color(DesignTokens.light.color.backgroundPrimaryDefault)
+              .fade(0.9)
+              .string()
+          }
+        }
+      },
+    });
+
+    return (
+      <Tooltip text={text('text', 'Station Hub')} styles={{ duration: '0 !important', exitDuration: '0 !important', delay: '0 !important' }}>
+        <Icon icon={Icons.STATION} className={useStyle().icon} size={19}/>
+      </Tooltip>
+    );
+  })
   .add('with custom style', () => (
     <Tooltip
       text={text('text', 'Custom Hub', 'tooltip')}

@@ -4,14 +4,15 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { createUseStyles } from 'react-jss';
 
-import Colors from '@components/Colors';
+
 import Button from '@components/Button';
 import Image, { Images } from '@components/Image';
 import Icon, { Icons } from '@components/Icon';
 import Tooltip from '@components/Tooltip';
 import DropdownMenu from '@components/DropdownMenu';
+import DesignTokens, { StationTheme } from '@src/design-system';
 
-const appStyles = createUseStyles({
+const appStyles = createUseStyles((theme: StationTheme) => ({
   button:{
     width: 265
   },
@@ -29,7 +30,7 @@ const appStyles = createUseStyles({
     width: 190,
     justifyContent: 'space-between',
   }
-});
+  }));
 
 
 storiesOf('Components|Button', module)
@@ -61,6 +62,7 @@ storiesOf('Components|Button', module)
     centered: { disable: true },
   })
   .add('Application (AppStore minified)', () => {
+      const theme = DesignTokens.light;
       const style = appStyles();
       return (<Button
         icon={text('icon', 'https://zeplin.io/img/favicon/228x228.png')}
@@ -70,7 +72,7 @@ storiesOf('Components|Button', module)
         onClick={e => action('onButtonClicked')(e)}
         className={style.button}
       >
-        <Icon icon={Icons.PLUS}/>
+        <Icon icon={Icons.PLUS} size={18}/>
       </Button>)
     },
   {
@@ -88,21 +90,27 @@ storiesOf('Components|Button', module)
     {
       centered: { disable: true },
     })
-  .add('Workspace (Team hub)', () => (
-    <Button onClick={e => action('onButtonClicked')(e)} className={appStyles().workspace} icon={Images.LIKE} text={'Station team'}>
-      <DropdownMenu items={[{text: 'option one'}, {text: 'option two'}]} styles={{space: 10, margin: '0 10px 0 auto'}}>
-        <Icon icon={Icons.OPTIONS} color={Colors.lightPrimaryTextColor}/>
-      </DropdownMenu>
-    </Button>
-  ))
-  .add('With slotted childrens', () => (
+  .add('Workspace (Team hub)', () => {
+    const theme = DesignTokens.light;
+    return (
+      <Button onClick={e => action('onButtonClicked')(e)} className={appStyles().workspace} icon={Images.LIKE} text={'Station team'}>
+        <DropdownMenu items={[{text: 'option one'}, {text: 'option two'}]} styles={{space: 10, margin: '0 10px 0 auto'}}>
+          <Icon icon={Icons.OPTIONS} color={theme.color.textPrimaryDefault} size={12}/>
+        </DropdownMenu>
+      </Button>
+    )
+  })
+  .add('With slotted childrens', () => {
+    const theme = DesignTokens.light;
+    return (
       <Button onClick={e => action('onButtonClicked')(e)} className={appStyles().custom}>{{
         left: <Tooltip text={'This is custom right content'}>
-                <Image image={Images.PROFILE_DEFAULT}/>
-              </Tooltip>,
+          <Image image={Images.PROFILE_DEFAULT} size={18}/>
+        </Tooltip>,
         main: <span>GrandMasterFesse</span>,
         right: <DropdownMenu items={[{text: 'option one'}, {text: 'option two'}]}>
-                <Icon icon={Icons.PLUS}/>
-              </DropdownMenu>,
+          <Icon icon={Icons.PLUS} size={12} color={theme.color.textPrimaryDefault}/>
+        </DropdownMenu>,
       }}</Button>
-    ));
+    )
+  });
