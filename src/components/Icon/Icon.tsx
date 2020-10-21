@@ -2,6 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classNames from 'classnames';
 import SvgIcon, { Icons } from './svg';
+import { StationTheme } from '../../design-system';
 
 type IconProps = {
 	icon: Icons;
@@ -11,7 +12,7 @@ type IconProps = {
 	onClick?: (icon: Icons, e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
 	Icon: {
 		fontFamily: [
 			'-apple-system',
@@ -33,7 +34,7 @@ const useStyles = createUseStyles({
 		height: '100%',
 		fill: (props: IconProps) => props.color || 'black'
 	}
-});
+  }));
 
 const Icon = (props: IconProps) => {
 	const classes = useStyles(props);

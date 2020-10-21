@@ -2,6 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import classNames from 'classnames';
 import images from '../../assets/images';
+import { StationTheme } from '../../design-system';
 
 type ImageProps = {
   className?: string;
@@ -11,7 +12,7 @@ type ImageProps = {
 	height?: number | string;
 };
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   Image: {
     fontFamily: [
       '-apple-system',
@@ -32,7 +33,7 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '100%'
   },
-});
+}));
 
 const Image = (props: ImageProps) => {
   const classes = useStyles(props);

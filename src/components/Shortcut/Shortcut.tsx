@@ -2,7 +2,8 @@ import * as React from 'react';
 import classNames from "classnames";
 import { createUseStyles } from 'react-jss';
 
-import Colors from "../Colors";
+
+import { StationTheme } from '@src/design-system';
 
 type ShortcutProps = {
   className?: string;
@@ -47,10 +48,10 @@ export const OsxToPc = {
   [Key.ESCAPE]: Key.ESC
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   container: {
     display: 'flex',
-    color: Colors.lightSecondaryTextColor,
+    color: theme.color.textSecondaryDefault,
     fontSize: (size: number) => size * 0.6,
     '& kbd:not(:last-child)': {
       marginRight: (size: number) => size / 8.33
@@ -78,8 +79,8 @@ const useStyles = createUseStyles({
     minWidth: (size: number) => size,
     height: (size: number) => size,
     fontWeight: 600,
-    backgroundColor: Colors.lightSecondaryBackgroundColor,
-    border: (size: number) => `${size / 25}px solid ${Colors.lightSecondaryHoverBackgroundColor}`,
+    backgroundColor: theme.color.backgroundSecondaryDefault,
+    border: (size: number) => `${size / 25}px solid ${theme.color.backgroundSecondaryHover}`,
     borderRadius: (size: number) => size / 6.25,
   },
   padding: (size: number) => ({
@@ -90,7 +91,7 @@ const useStyles = createUseStyles({
     fontWeight: 500,
     alignSelf: 'center',
   }
-});
+  }));
 
 export const Shortcut = ({ keys, size = 25, OsxToPcMap = OsxToPc, className, keyClassName, separatorClassName, separator = 'or' }: ShortcutProps) => {
   const classes = useStyles(size);

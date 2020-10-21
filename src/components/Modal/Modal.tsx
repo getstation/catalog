@@ -3,7 +3,8 @@ import { createUseStyles } from 'react-jss';
 import classNames from 'classnames';
 import ModalHead from './ModalHead';
 import ModalContent from './ModalContent';
-import Colors from "../Colors";
+
+import { StationTheme } from '../../design-system';
 
 interface ModalProps {
   children: JSX.Element | JSX.Element[];
@@ -12,10 +13,10 @@ interface ModalProps {
   className?: string;
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   root: {
     width: '400px',
-    background: Colors.lightPrimaryBackgroundColor,
+    background: theme.color.backgroundPrimaryDefault,
     borderRadius: '10px',
     boxShadow: '0 0 24px 0 rgba(0, 0, 0, 0.12)',
     position: 'absolute',
@@ -27,11 +28,11 @@ const useStyles = createUseStyles({
     padding: 0,
     margin: 0,
     '&::backdrop': {
-      background: Colors.lightPrimaryBackgroundColor,
+      background: theme.color.backgroundPrimaryDefault,
       opacity: 0.6,
     },
   },
-});
+}));
 
 function Modal(props: ModalProps) {
   const classes = useStyles();

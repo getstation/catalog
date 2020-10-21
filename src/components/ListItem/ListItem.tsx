@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import React, {ReactChild} from 'react';
 import color from 'color';
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, useTheme } from 'react-jss';
 import Icon, { Icons } from '../Icon';
 import Image from '../Image';
-import Colors from '../Colors';
 import fallback from './favicon-placeholder.svg';
+import { StationTheme } from '../../design-system';
 
 type ListItemProps = {
   children?: ReactChild | ReactChild[];
@@ -26,7 +26,7 @@ type ListItemProps = {
 };
 
 const useStyles = (isRecent: boolean) =>
-  createUseStyles({
+  createUseStyles((theme: StationTheme) => ({
     ListItem: {
       fontFamily: [
         '-apple-system',
@@ -42,15 +42,15 @@ const useStyles = (isRecent: boolean) =>
       ],
       width: '100%',
       height: isRecent ? 42 : 53,
-      backgroundColor: Colors.lightPrimaryBackgroundColor,
+      backgroundColor: theme.color.backgroundPrimaryDefault,
       listStyle: 'none',
       display: 'flex',
       outline: 'none',
       '&:hover, &:focus, &:active': {
-        backgroundColor: Colors.lightPrimaryHoverBackgroundColor
+        backgroundColor: theme.color.backgroundPrimaryHover
       },
       '&:focus:not(:hover), &.selected': {
-        backgroundColor: Colors.lightPrimaryFocusBackgroundColor,
+        backgroundColor: theme.color.backgroundPrimaryFocus,
         '& $title': {
           maxWidth: '100%'
         },
@@ -98,7 +98,7 @@ const useStyles = (isRecent: boolean) =>
     },
     title: {
       display: 'flex',
-      color: Colors.lightPrimaryTextColor,
+      color: theme.color.textPrimaryDefault,
       fontSize: isRecent ? 12 : 13,
       fontWeight: isRecent ? 'normal' : 'bold',
       fontStyle: 'normal',
@@ -111,7 +111,7 @@ const useStyles = (isRecent: boolean) =>
     appName: {
       display: 'flex',
       alignItems: 'center',
-      color: Colors.lightSecondaryTextColor,
+      color: theme.color.textSecondaryDefault,
       fontSize: isRecent ? 10 : 11,
       fontWeight: 500,
       fontStyle: 'normal',
@@ -125,13 +125,13 @@ const useStyles = (isRecent: boolean) =>
         fontWeight: 'normal',
         fontStyle: 'italic',
         letterSpacing: 0,
-        color: Colors.lightPrimaryLinkColor,
+        color: theme.color.brandPrimaryDefault,
         textDecoration: 'none',
         outline: 'none'
       }
     },
     appLabel: {
-      color: Colors.lightSecondaryTextColor,
+      color: theme.color.textSecondaryDefault,
       fontWeight: 500,
       fontStyle: 'normal',
       letterSpacing: 0,
@@ -154,7 +154,7 @@ const useStyles = (isRecent: boolean) =>
     },
     returnKey: {
       display: 'flex',
-      border: [1, 'solid', color(Colors.lightPrimaryTextColor).fade(0.8).string()],
+      border: [1, 'solid', color(theme.color.textPrimaryDefault).fade(0.8).string()],
       borderRadius: 2,
       width: 10,
       height: 10,
@@ -164,12 +164,13 @@ const useStyles = (isRecent: boolean) =>
       marginLeft: 12,
       width: 8,
       '& svg': {
-        fill: Colors.lightPrimaryTextColor,
+        fill: theme.color.textPrimaryDefault,
       }
     }
-  });
+  }));
 const ListItem = (props: ListItemProps) => {
   const { children, url, favIconUrl, appIconUrl, isRecent = false, isTeamhub = false, type, title, subtitle, account, onClick, isSelected } = props;
+  const theme: any = useTheme();
   const classes = useStyles(isRecent)();
   const className = classNames(classes.ListItem, { selected: isSelected }, props.className);
 
@@ -194,7 +195,7 @@ const ListItem = (props: ListItemProps) => {
         </span>
       </div>
       <div className={classes.icon}>
-        <Icon icon={Icons.RETURN_KEY} color={Colors.lightSecondaryTextColor} className={classes.returnKey} />
+        <Icon icon={Icons.RETURN_KEY} color={theme.color.textSecondaryDefault} className={classes.returnKey} />
       </div>
       {children}
       {!isTeamhub && !isRecent && type === 'TAB' && (

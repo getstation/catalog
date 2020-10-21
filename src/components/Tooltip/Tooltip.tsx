@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-import { createUseStyles } from 'react-jss';
-import Colors from '../Colors';
+import { createUseStyles, useTheme } from 'react-jss';
 import {TooltipStyles, TooltipPositions} from './index';
+import { StationTheme } from '@src/design-system';
 
 
 type TooltipProps = {
@@ -14,6 +14,11 @@ type TooltipProps = {
   textClassName?: string;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
+
+type Styles = {
+  theme: StationTheme;
+  styles: TooltipStyles;
+}
 
 const positions = (size: number) => ({
   top: {
@@ -40,19 +45,19 @@ const positions = (size: number) => ({
     transform: 'scale(0) translateY(50%)',
     transformOrigin: 'bottom right',
   }
-});
+  });
 
 const useStyles = createUseStyles({
   root: {
     display: 'flex',
     position: 'relative',
-    margin: (styles: TooltipStyles) => styles?.margin || 0,
+    margin: ({ styles }: Styles) => styles?.margin || 0,
     '&:hover $container': {
       opacity: 1,
       // avoid transform override cf: https://stackoverflow.com/questions/32224802/extend-the-final-state-of-the-first-animation-for-translated-element#answers
-      transform: (styles: TooltipStyles) => (positions(styles?.space || 8)[styles?.position || TooltipPositions.BOTTOM]).transform.replace('0)', '1)'),
-      transitionDuration: (styles: TooltipStyles) => styles?.duration || 150,
-      transitionDelay: (styles: TooltipStyles) => styles?.delay || 250
+      transform: ({ styles }: Styles) => (positions(styles?.space || 8)[styles?.position || TooltipPositions.BOTTOM]).transform.replace('0)', '1)'),
+      transitionDuration: ({ styles }: Styles) => styles?.duration || 150,
+      transitionDelay: ({ styles }: Styles) => styles?.delay || 250
     }
   },
   container: {
@@ -75,25 +80,27 @@ const useStyles = createUseStyles({
     ],
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: (styles: TooltipStyles) => styles?.container?.color || Colors.lightSecondaryBackgroundColor,
-    border: ['solid', 0.5, Colors.lightSecondaryHoverBackgroundColor],
-    borderRadius: (styles: TooltipStyles) => styles?.container?.radius || 3,
+    backgroundColor: ({ theme, styles }: Styles) => styles?.container?.color || theme.color.backgroundSecondaryDefault,
+    border: ({ theme }: Styles) => ['solid', 0.5, theme.color.backgroundSecondaryHover],
+    borderRadius: ({ styles }: Styles) => styles?.container?.radius || 3,
     opacity: 0,
-    transitionDuration: (styles: TooltipStyles) => styles?.exitDuration || 100,
+    transitionDuration: ({ styles }: Styles) => styles?.exitDuration || 100,
     transitionDelay: 0,
     transitionTimingFunction: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
-    padding: (styles: TooltipStyles) => styles?.container?.padding || '3px 4px',
+    padding: ({ styles }: Styles) => styles?.container?.padding || '3px 4px',
     boxShadow: '0 2px 4px 1px rgba(60, 80, 93, 0.08)',
   },
   text: {
-    color: (styles: TooltipStyles) => styles?.text?.color || Colors.lightPrimaryTextColor,
-    fontSize: (styles: TooltipStyles) => styles?.text?.size || 12,
+    color: ({ theme, styles }: Styles) => styles?.text?.color || theme.color.textPrimaryDefault,
+    fontSize: ({ styles }: Styles) => styles?.text?.size || 12,
   },
-  position: (styles: TooltipStyles) => (positions(styles?.space || 8)[styles?.position || TooltipPositions.BOTTOM])
+  position: ({ styles }: Styles) => (positions(styles?.space || 8)[styles?.position || TooltipPositions.BOTTOM])
 });
 
 const Tooltip = ({children, text, styles, className, boxClassName, textClassName, onClick}: TooltipProps) => {
-  const classes = useStyles(styles);
+  const theme: object | null = useTheme();
+
+  const classes = useStyles({ theme, styles });
   return (
     <div className={classNames(classes.root, className)} onClick={onClick}>
       {children}

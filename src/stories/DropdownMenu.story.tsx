@@ -2,17 +2,17 @@ import React, {useState} from 'react';
 import color from 'color';
 import {storiesOf} from '@storybook/react';
 
-import Colors from '@components/Colors';
+
 import DropdownMenu from '@components/DropdownMenu';
 import Icon, {Icons} from '@components/Icon';
 
-import {createUseStyles} from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import {action} from "@storybook/addon-actions";
 import {boolean, number, select} from "@storybook/addon-knobs";
 import {Images} from "@src/assets/images";
 import Image from "@components/Image";
 import Tooltip, {TooltipPositions} from "@components/Tooltip";
-import {SelectTypeOptionsProp} from "@storybook/addon-knobs/dist/components/types";
+import DesignTokens, { StationTheme } from '@src/design-system';
 
 const items = [
   {
@@ -44,7 +44,7 @@ const selectable = [
   { text: 'App name' },
 ];
 
-const useStyle = createUseStyles({
+const useStyle = createUseStyles((theme: StationTheme) => ({
   item: {
     display: 'flex',
     flexDirection: 'row',
@@ -56,9 +56,9 @@ const useStyle = createUseStyles({
     letterSpacing: 0,
     whiteSpace: 'nowrap',
     paddingRight: '24px',
-    color: Colors.lightPrimaryTextColor,
+    color: theme?.color?.textPrimaryDefault,
     '&:hover': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor
+      backgroundColor: theme?.color?.backgroundSecondaryHover
     },
   },
   icon: {
@@ -72,7 +72,7 @@ const useStyle = createUseStyles({
   sortButton: {
     height: 24,
     width: 96,
-    color: Colors.lightPrimaryTextColor,
+    color: theme?.color?.textPrimaryDefault,
     fontSize: 14,
     fontWeight: 600,
     display: 'flex',
@@ -80,32 +80,34 @@ const useStyle = createUseStyles({
     justifyContent: 'space-around',
     padding: '0 4px',
     borderRadius: 2,
-    backgroundColor: Colors.lightSecondaryBackgroundColor,
+    backgroundColor: theme?.color?.backgroundSecondaryDefault,
     '&>:focus': {
-      backgroundColor: Colors.lightTertiaryBackgroundColor,
+      backgroundColor: theme?.color?.backgroundSecondaryHover,
     },
     '&>:last-child': {
       width: 7,
     }
   }
-});
+}));
 
 storiesOf('Components|DropdownMenu', module)
   .addParameters({ options: { selectedPanel: 'storybook/DropdownMenu' } })
-  .add('Basic usage', () => (
+  .add('Basic usage', () => {
+    const theme = DesignTokens.light;
     // @ts-ignore for select knob (sigh)
-    <DropdownMenu items={items} onSelect={action('onSelect')} closeOnSelect={boolean('close menu on select', true)} opened={boolean('opened', true)} selected={select('selected', items, items[0])}>
-      <Icon icon={Icons.OPTIONS} size={25} color={Colors.lightPrimaryTextColor}/>
-    </DropdownMenu>
-  ))
+    return (<DropdownMenu items={items} onSelect={action('onSelect')} closeOnSelect={boolean('close menu on select', true)} opened={boolean('opened', true)} selected={select('selected', items, items[0])}>
+      <Icon icon={Icons.OPTIONS} size={25} color={theme.color.textPrimaryDefault}/>
+    </DropdownMenu>)
+  })
   .add('Slotted childrens', () => {
+    const theme = DesignTokens.light;
     const classes = useStyle();
     return (
       <DropdownMenu closeOnSelect={boolean('close menu on select', false)}>{{
-        trigger: <Icon icon={Icons.OPTIONS} size={25} color={Colors.lightPrimaryTextColor}/>,
+        trigger: <Icon icon={Icons.OPTIONS} size={25} color={theme.color.textPrimaryDefault}/>,
         items: items.map((item, i) => (
           <li key={i} className={classes.item} onClick={_ => action('onSelectCustom')(item)}>
-            <Icon icon={item.icon} color={color(Colors.lightPrimaryTextColor).fade(0.4).string()} size={14} className={classes.icon}/>
+            <Icon icon={item.icon} color={color(theme?.color?.textPrimaryDefault).fade(0.4).string()} size={14} className={classes.icon}/>
             <span>{item.text}</span>
           </li>
         ))
@@ -113,6 +115,7 @@ storiesOf('Components|DropdownMenu', module)
     );
   })
   .add('Selectable behavior', () => {
+    const theme = DesignTokens.light;
     const classes = useStyle();
     const isMultiple = boolean('multiple choices', false);
     const [items, setItems] = useState(selectable);
@@ -126,9 +129,9 @@ storiesOf('Components|DropdownMenu', module)
     return (
       <DropdownMenu items={items} checkmark onSelect={choiceChanged} closeOnSelect={boolean('close menu on select', false)}>
         <div className={classes.sortButton}>
-          <Icon icon={Icons.ARROWS_UP_DOWN} size={14} color={Colors.lightPrimaryTextColor}/>
+          <Icon icon={Icons.ARROWS_UP_DOWN} size={14} color={theme.color.textPrimaryDefault}/>
           <span>Sort by</span>
-          <Icon icon={Icons.DROPDOWN} size={14} color={Colors.lightPrimaryTextColor}/>
+          <Icon icon={Icons.DROPDOWN} size={14} color={theme.color.textPrimaryDefault}/>
         </div>
       </DropdownMenu>
     )

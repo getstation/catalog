@@ -1,8 +1,9 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, useTheme } from 'react-jss';
 import classNames from 'classnames';
 import Icon, { Icons } from '../Icon';
-import Colors from "../Colors";
+
+import { StationTheme } from '../../design-system';
 
 interface ModalHeadProps {
   title: string;
@@ -10,14 +11,14 @@ interface ModalHeadProps {
   className?: string;
 }
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   '@import': 'url(https://fonts.googleapis.com/css?family=Asap:400,500&display=swap&subset=latin-ext)',
   root: {
     display: 'flex',
     height: '80px',
     alignItems: 'center',
     padding: '0 40px',
-    borderBottom: `solid 1px ${Colors.lightSecondaryHoverBackgroundColor}`,
+    borderBottom: `solid 1px ${theme.color.backgroundSecondaryHover}`,
   },
   title: {
     fontFamily: 'Asap',
@@ -27,16 +28,17 @@ const useStyles = createUseStyles({
     fontStyle: 'normal',
     lineHeight: 'normal',
     letterSpacing: '0.35px',
-    color: Colors.lightPrimaryTextColor,
+    color: theme.color.textPrimaryDefault,
   },
   close: {
     display: 'flex',
     marginLeft: 'auto',
     cursor: 'pointer',
   },
-});
+}));
 
 function ModalHead(props: ModalHeadProps) {
+  const theme: any = useTheme();
   const classes = useStyles();
   return (
     <div className={classNames(classes.root, props.className)}>
@@ -46,7 +48,7 @@ function ModalHead(props: ModalHeadProps) {
         onClick={props.onClose}
         icon={Icons.CROSS}
         size={14}
-        color={Colors.lightPrimaryTextColor}
+        color={theme.color.textPrimaryDefault}
       />
     </div>
   );

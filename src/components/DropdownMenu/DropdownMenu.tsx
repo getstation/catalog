@@ -1,13 +1,13 @@
 import React from 'react';
 import color from 'color';
 import classNames from 'classnames';
-import {createUseStyles} from 'react-jss';
+import { createUseStyles, useTheme } from 'react-jss';
 import Image from "../Image";
-import Colors from '../Colors';
 import Icon, {Icons} from '../Icon';
 import {DropdownMenuStyles, DropdownMenuProps} from './index';
+import { StationTheme } from '../../design-system';
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: StationTheme) => ({
   root: {
     position: 'relative',
     margin: (styles: DropdownMenuStyles) => styles?.margin || 0,
@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
     top: (styles: DropdownMenuStyles) => `calc(100% + ${styles?.space || 2}px)`,
     left: 0,
     padding: (styles: DropdownMenuStyles) => styles?.items?.padding || '5px 0',
-    backgroundColor: Colors.lightSecondaryBackgroundColor,
+    backgroundColor: theme.color.backgroundSecondaryDefault,
     border: ['solid', 0.5, '#cfd6db'],
     borderRadius: 6,
     transform: 'scale(0)',
@@ -48,9 +48,9 @@ const useStyles = createUseStyles({
     letterSpacing: 0,
     whiteSpace: 'nowrap',
     padding: [0, 18],
-    color: Colors.lightPrimaryTextColor,
+    color: theme.color.textPrimaryDefault,
     '&:hover': {
-      backgroundColor: Colors.lightSecondaryHoverBackgroundColor
+      backgroundColor: theme.color.backgroundSecondaryHover
     }
   },
   icon: {
@@ -82,9 +82,9 @@ const useStyles = createUseStyles({
     transform: 'scale(1)',
   },
   selected: {
-    backgroundColor: Colors.lightSecondaryHoverBackgroundColor
+    backgroundColor: theme.color.backgroundSecondaryHover
   }
-});
+  }));
 
 const DropdownMenu = ({ children,
                         items,
@@ -97,6 +97,7 @@ const DropdownMenu = ({ children,
                         className,
                         itemClassName,
                         listClassName }: DropdownMenuProps) => {
+  const theme: any = useTheme();
   const classes = useStyles(styles);
   return (
     <button className={classNames(classes.root, className)}>
@@ -104,10 +105,10 @@ const DropdownMenu = ({ children,
       <ul className={classNames(classes.items, listClassName, opened && classes.opened)}>{items ? items.map(item =>
         <li key={item.text} className={classNames(classes.item, itemClassName, selected?.text === item.text && classes.selected)} onMouseDown={_ => onSelect && onSelect(item)} tabIndex={closeOnSelect ? 1 : undefined}>
           {checkmark && (item.selected
-            ? <Icon icon={Icons.CHECKMARK} size={12} color={Colors.lightPrimaryTextColor} className={classes.selectIcon}/>
+            ? <Icon icon={Icons.CHECKMARK} size={12} color={theme.color.textPrimaryDefault} className={classes.selectIcon}/>
             : <div className={classes.unchecked}/>
           )}
-          {item.icon && <Icon className={classes.icon} icon={item.icon} color={color(Colors.lightPrimaryTextColor).fade(0.4).string()} size={12}/>}
+          {item.icon && <Icon className={classes.icon} icon={item.icon} color={color(theme.color.textPrimaryDefault).fade(0.4).string()} size={12}/>}
           {item.image && <Image className={classes.image} image={item.image} size={20}/>}
           <span>{item.text}</span>
         </li>
