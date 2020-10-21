@@ -1,0 +1,33 @@
+{
+  "repository": "@station/Tiros-Dark",
+  "personalAccessToken": "76c90dadd98ec1946c26a23acfbeb8e364ab3a811a58e7697e4aded33164c9c0",
+  "rules": [
+    {
+      "path": "src/design-system/design-system_dark.ts",
+      "parsers": [
+        {
+          "name": "to-jss",
+          "options": {
+            "formatName": "camelCase",
+            "formatTokens":{
+              "colorFormat": "hex8",
+              "borderFormat": "object",
+              "durationFormat": "number",
+              "opacityFormat": "number",
+              "depthFormat": "number",
+              "measurementFormat": "number",
+              "shadowFormat": "array",
+              "gradientFormat": "array",
+              "textStyleFormat": "classObject"
+            },
+            "formatConfig": {
+              "jssObjectName": "darkTheme",
+              "singleQuote": true,
+              "printWidth": 120
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

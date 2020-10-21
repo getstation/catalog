@@ -87,6 +87,7 @@
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
     "prettier": "^1.19.1",
+    "storybook-addon-jss-theme": "^1.0.2",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2"
   },
@@ -95,6 +96,7 @@
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "bit build",
+    "ds:sync": "specify extract -C .specify/light-theme.json && specify extract -C .specify/dark-theme.json",
     "gen:icons": "ts-node --transpile-only scripts/generate-icons.ts",
     "gen:images": "node --experimental-modules scripts/genIconsModules.mjs",
     "chromatic": "chromatic --project-token=q65anlqcdyq"
