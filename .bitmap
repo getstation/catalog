@@ -481,7 +481,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "station.catalog/list-item@0.0.33": {
+    "station.catalog/list-item@0.1.1": {
         "files": [
             {
                 "name": "ListItem.tsx",
