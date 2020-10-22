@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
 import classNames from 'classnames';
 
-import { StationTheme } from '@src/design-system';
+import { StationTheme } from '../../design-system';
 
 export type RadioProps = {
   className?: string;

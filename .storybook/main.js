@@ -12,7 +12,6 @@ module.exports = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-viewport',
     '@storybook/addon-storysource',
-    // "themeprovider-storybook/register",
     'storybook-addon-jss-theme/dist/register'
   ],
   webpackFinal: async config => {

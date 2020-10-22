@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { createUseStyles } from 'react-jss';
 
 
-import { StationTheme } from '@src/design-system';
+import { StationTheme } from '../../design-system';
 
 type ShortcutProps = {
   className?: string;
