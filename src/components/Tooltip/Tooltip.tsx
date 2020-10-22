@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import classNames from 'classnames';
 import { createUseStyles, useTheme } from 'react-jss';
 import {TooltipStyles, TooltipPositions} from './index';
-import { StationTheme } from '@src/design-system';
+import { StationTheme } from '../../design-system';
 
 
 type TooltipProps = {

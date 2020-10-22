@@ -4,9 +4,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withLinks } from '@storybook/addon-links';
-import ThemeProvider from 'react-jss';
-// import { withThemesProvider } from 'themeprovider-storybook';
-import { withThemesProvider, ThemesProvider } from 'storybook-addon-jss-theme';
+import { withThemesProvider } from 'storybook-addon-jss-theme';
 import DesignTokens from '../src/design-system';
 
 addDecorator(centered);
